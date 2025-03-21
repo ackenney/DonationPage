@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { cx } from "class-variance-authority";
-import { HandHeart, MenuIcon, X } from "lucide-react";
+import { EuroIcon, HandHeart, MenuIcon, X } from "lucide-react";
 
 import { Button } from "../Button";
 import { Menu, MobileMenu } from "./navigation/Menu";
@@ -34,7 +34,7 @@ export const Header = () => {
             <Menu />
             <div className="hidden lg:flex lg:gap-2">
               <Button className="text-md font-bold">
-                <HandHeart className="size-4" href="google.com"/>
+                <EuroIcon className="size-4" href="google.com"/>
                 <a href="https://www.gofundme.com/" target="_blank">
                 Donate Now 
             </a>
