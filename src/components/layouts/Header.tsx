@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { cx } from "class-variance-authority";
-import { EuroIcon, HandHeart, MenuIcon, X } from "lucide-react";
+import { EuroIcon, MenuIcon, X } from "lucide-react";
 
 import { Button } from "../Button";
 import { Menu, MobileMenu } from "./navigation/Menu";
