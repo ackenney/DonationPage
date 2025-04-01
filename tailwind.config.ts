@@ -7,9 +7,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+  
     extend: {
+      colors: {
+        'color1': '#ff7849',
+        'color2': '#969696',
+      },
       fontFamily: {
-        sans: ["Winky Sans", ...defaultTheme.fontFamily.sans],
+        sans: ["Playfair", ...defaultTheme.fontFamily.sans],
       },
     },
   },
