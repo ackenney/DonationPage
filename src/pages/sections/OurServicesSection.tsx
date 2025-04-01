@@ -12,7 +12,7 @@ export default function OurServicesSection() {
             SERVICES
           </span> 
           <h2 className="text-3xl lg:text-5xl font-bold">
-            How The Hope Network Helps Our Community
+            How We Help Our Community
           </h2>
         </div>
         <div className="flex flex-col lg:flex-row lg:justify-between gap-y-16 lg:gap-x-6">

@@ -6,7 +6,7 @@ export const Footer = () => {
       <div className="w-full lg:max-w-7xl lg:mx-auto p-8 flex flex-col gap-4 lg:gap-8">
         
         <span className="text-white text-sm font-medium">
-          The Hope Network © {currentYear} 
+        Maroon Strategy © {currentYear} 
         </span>
       </div>
     </footer>

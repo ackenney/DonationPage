@@ -14,7 +14,7 @@ export const Header = () => {
         <div className="z-50 w-full lg:max-w-7xl lg:mx-auto">
           <div className="px-8 py-4 flex justify-between items-center border-b border-neutral-200 lg:border-none bg-white">
             <a href="#home" className="text-xl lg:text-2xl font-bold">
-              The Hope Network
+            Maroon Strategy
             </a>
             <Button
               onClick={() => setIsOpen(!isOpen)}

@@ -35,7 +35,7 @@ export default function ContactUsSection() {
               icon={<Mail className="size-12 text-sky-800" />}
             >
               <ContactList title="For More Information">
-                hopenetwork@gmail.com
+              help@maroonstrategy.org
               </ContactList>
       
             </ContactItem>
