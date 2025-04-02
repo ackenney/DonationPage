@@ -19,16 +19,16 @@ bun install
 ### Usage
 Local development server:
 ```bash
-bun run dev
+npm run dev
 ```
 
 Build for production:
 ```bash
-bun run build
+npm run build
 ```
 
 Serve production build:
 ```bash
-bun run preview
+npm run preview
 ```
 
