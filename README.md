@@ -13,7 +13,7 @@ cd donatepage
 
 Install the dependencies:
 ```bash
-bun install
+npm install
 ```
 
 ### Usage
