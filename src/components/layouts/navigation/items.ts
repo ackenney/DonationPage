@@ -18,6 +18,11 @@ export const navigationItems: NavigationItem[] = [
   },
 
   {
+    label: "Application",
+    href: "#application",
+  },
+
+  {
     label: "FAQ",
     href: "#faq",
   },
