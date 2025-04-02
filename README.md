@@ -8,7 +8,7 @@
 
 Change into the directory:
 ```bash
-cd charitywell
+cd donatepage
 ```
 
 Install the dependencies:
