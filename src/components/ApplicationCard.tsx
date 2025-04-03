@@ -19,11 +19,11 @@ export const ApplicationCard = ({
       <div className="rounded-xl h-56 w-full overflow-hidden">
         <img src={imageUrl} className="h-full w-full object-cover" />
       </div>
-      <div className="flex flex-col gap-1">
+      <div className="flex flex-col  text-TextColor2 gap-1">
         <span className="text-lg font-bold">
           {title}
         </span>
-        <p className="text-sm leading-6">
+        <p className="text-sm  leading-6">
           {children}
         </p>
       </div>

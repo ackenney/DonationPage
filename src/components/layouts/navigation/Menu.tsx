@@ -24,7 +24,7 @@ export const MobileMenu = ({
       ))}
       <div className="py-2 flex flex-col gap-2">
         <Button className="font-bold">
-          <EuroIcon className="size-4" />
+    
           <a href="https://www.gofundme.com/" >
                 Donate Now
             </a>

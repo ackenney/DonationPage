@@ -18,7 +18,7 @@ export const navigationItems: NavigationItem[] = [
   },
 
   {
-    label: "Application",
+    label: "Applications",
     href: "#application",
   },
 

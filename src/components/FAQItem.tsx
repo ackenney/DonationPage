@@ -12,7 +12,7 @@ export const FAQItem = ({
       <span className="text-lg text-sky-900 font-bold">
         {question}
       </span>
-      <p className="text-sm text-neutral-800 leading-6">
+      <p className="text-sm text-TextColor2 leading-6">
         {children}
       </p>
     </article>

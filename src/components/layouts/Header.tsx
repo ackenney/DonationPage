@@ -13,7 +13,7 @@ export const Header = () => {
       <header className="z-50 fixed top-0 left-0 w-full flex flex-col lg:flex-row lg:border-b lg:border-neutral-200 lg:bg-white">
         <div className="z-50 w-full lg:max-w-7xl lg:mx-auto">
           <div className="px-8 py-4 flex justify-between items-center border-b border-neutral-200 lg:border-none bg-white">
-            <a href="#home" className="text-xl lg:text-2xl font-bold">
+            <a href="#home" className="text-xl text-TextColor2 lg:text-2xl font-bold">
             Maroon Strategy
             </a>
             <Button
@@ -33,12 +33,17 @@ export const Header = () => {
             </Button>
             <Menu />
             <div className="hidden lg:flex lg:gap-2">
+              
+              
               <Button className="text-md font-bold">
-                <EuroIcon className="size-4" href="google.com"/>
-                <a href="https://www.gofundme.com/" target="_blank">
+  
+                <a href="https://www.gofundme.com/">
                 Donate Now 
-            </a>
-              </Button>
+                </a>
+                </Button>
+  
+
+
             </div>
           </div>
         </div>

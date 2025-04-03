@@ -6,7 +6,7 @@ export default function FAQSection() {
     <Section id="faq" className="bg-sky-100/70">
       <div className="w-full lg:max-w-7xl lg:mx-auto p-8 lg:py-28 flex flex-col items-center gap-16">
         <div className="flex flex-col items-center">
-          <span className="text-xs lg:text-sm text-neutral-600 tracking-widest">LEARN MORE</span>
+          <span className="text-xs lg:text-sm text-TextColor1 tracking-widest">LEARN MORE</span>
           <h2 className="text-3xl lg:text-5xl text-sky-900 text-center font-bold">Frequently Asked Questions</h2>
         </div>
 

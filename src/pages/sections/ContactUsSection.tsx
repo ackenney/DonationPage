@@ -12,13 +12,13 @@ export default function ContactUsSection() {
         {/*   <span className="text-xs lg:text-sm text-neutral-600 tracking-widest">
             REACH OUT
           </span> */}
-          <h2 className="text-3xl lg:text-5xl text- font-bold">
+          <h2 className="text-3xl lg:text-5xl text-TextColor2 font-bold">
             Contact Us
           </h2>
         </div>
 
         <div className="w-full flex sm:justify-center lg:justify-start">
-          <div className="lg:w-full flex flex-col lg:flex-row lg:justify-around gap-8">
+          <div className="lg:w-full flex flex-col text-TextColor2 lg:flex-row lg:justify-around gap-8">
             <ContactItem
               heading="Location"
               icon={<MapPin className="size-12 text-sky-800" />}
