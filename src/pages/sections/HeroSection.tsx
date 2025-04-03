@@ -1,7 +1,7 @@
-import { EuroIcon} from "lucide-react";
+
 import { Button } from "../../components/Button";
 import { Section } from "../../components/layouts/Section";
-import { ArrowRight } from "lucide-react";
+
 
 import img1 from "/images/rdne-6647119.jpg"
 

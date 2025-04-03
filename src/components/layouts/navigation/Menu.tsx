@@ -1,5 +1,5 @@
 import { cx } from "class-variance-authority";
-import {EuroIcon } from "lucide-react";
+
 
 import { Link } from "./Link";
 import { Button } from "../../Button";
