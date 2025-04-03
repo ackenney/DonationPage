@@ -2,18 +2,18 @@ import { Pen } from "lucide-react";
 import { Button } from "./Button";
 
 
-interface DonationsCardProps {
+interface ApplicationCardProps {
   children: React.ReactNode;
   imageUrl: string;
   title: string;
 }
 
-export const DonationsCard = ({
+export const ApplicationCard = ({
   children,
   imageUrl,
 
   title,
-}: DonationsCardProps) => {
+}: ApplicationCardProps) => {
   return (
     <div className="flex flex-col gap-4 bg-white p-4 rounded-xl w-full max-w-96">
       <div className="rounded-xl h-56 w-full overflow-hidden">

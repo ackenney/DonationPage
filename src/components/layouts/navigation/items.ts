@@ -27,6 +27,10 @@ export const navigationItems: NavigationItem[] = [
     href: "#faq",
   },
   {
+    label: "Our Team",
+    href: "#team",
+  },
+  {
     label: "Contact Us",
     href: "#contact-us",
   },

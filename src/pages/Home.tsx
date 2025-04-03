@@ -4,6 +4,8 @@ import AboutUsSection from "./sections/AboutUsSection";
 import ContactUsSection from "./sections/ContactUsSection";
 import ApplicationSection from "./sections/ApplicationSection";
 import OurServicesSection from "./sections/OurServicesSection";
+import TeamSection from "./sections/TeamSection";
+
 
 export default function Home() {
   return (
@@ -13,6 +15,7 @@ export default function Home() {
       <OurServicesSection />
       <ApplicationSection/>
       <FAQSection />
+      <TeamSection />
       <ContactUsSection />
     </main>
   );
