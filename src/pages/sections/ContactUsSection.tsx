@@ -34,8 +34,9 @@ export default function ContactUsSection() {
               heading="Email"
               icon={<Mail className="size-12 text-sky-800" />}
             >
-              <ContactList title="For More Information">
-              help@maroonstrategy.org
+
+              <ContactList title="Dr. Destiny Crockett  (She/Her)">
+              destiny@maroonstrategy.org
               </ContactList>
       
             </ContactItem>
