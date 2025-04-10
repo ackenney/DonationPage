@@ -1,16 +1,17 @@
 import { Section } from "../../components/layouts/Section";
 
-import img1 from "/images/thispersondoesnotexist.com-image01-1024x1024-1933487677.jpg"
-import img2 from "/images/this-person-does-not-exist-v0-9l5x3d2g21591-2237696112.jpg"
+import img1 from "/images/AsanniYork.jpg"
+import img2 from "/images/JeannineCook.jpg"
+import img3 from "/images/DestinyCrockett3.jpg"
+import img4 from "/images/DarisMcInnis2.jpg"
 
 
 
 const teamMembers = [
-  { name: "John Doe", title: "CEO", imageUrl: img2 },
-  { name: "Jane Smith", title: "CTO", imageUrl: img1 },
-  { name: "Alice Brown", title: "COO", imageUrl: img1 },
-  { name: "Bob Wilson", title: "CFO", imageUrl: img2 },
-  { name: "Emily Davis", title: "CMO", imageUrl: img1},
+  { name: "Dr. Destiny Crockett ", title: "Founder", imageUrl: img3 },
+  { name: "Jeannine A. Cook ", title: "Board Member", imageUrl: img2 },
+  { name: "Asanni A. York ", title: "Board Member", imageUrl: img1 },
+  { name: "Dr. Daris McInnis ", title: "Board Member", imageUrl: img4},
 
 ];
 
