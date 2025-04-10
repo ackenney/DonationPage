@@ -6,22 +6,22 @@ import { ContactList } from "../../components/contact/ContactList";
 
 export default function ContactUsSection() {
   return (
-    <Section id="contact-us">
+    <Section id="contact-us" className="bg-offWhite">
       <div className="w-full lg:max-w-7xl lg:mx-auto p-8 lg:py-28 flex flex-col gap-16">
         <div className="flex flex-col items-center">
-        {/*   <span className="text-xs lg:text-sm text-neutral-600 tracking-widest">
+        {   <span className="text-xs lg:text-sm text-navy tracking-widest">
             REACH OUT
-          </span> */}
-          <h2 className="text-3xl lg:text-5xl text-TextColor2 font-bold">
+          </span> }
+          <h2 className="text-3xl lg:text-5xl text-salmon font-bold">
             Contact Us
           </h2>
         </div>
 
         <div className="w-full flex sm:justify-center lg:justify-start">
-          <div className="lg:w-full flex flex-col text-TextColor2 lg:flex-row lg:justify-around gap-8">
+          <div className="lg:w-full flex flex-col text-nearBlack lg:flex-row lg:justify-around gap-8">
             <ContactItem
               heading="Location"
-              icon={<MapPin className="size-12 text-sky-800" />}
+              icon={<MapPin className="size-12 text-nearGreen" />}
             >
               <ContactList title="Main Address">
                 72 Kendell Street<br />
@@ -32,7 +32,7 @@ export default function ContactUsSection() {
 
             <ContactItem
               heading="Email"
-              icon={<Mail className="size-12 text-sky-800" />}
+              icon={<Mail className="size-12 text-nearGreen" />}
             >
 
               <ContactList title="Dr. Destiny Crockett  (She/Her)">
@@ -43,7 +43,7 @@ export default function ContactUsSection() {
 
             <ContactItem
               heading="Phone"
-              icon={<PhoneCall className="size-12 text-sky-800" />}
+              icon={<PhoneCall className="size-12 text-nearGreen" />}
             >
               <ContactList title="Landline">
               +00 000-0000-0000

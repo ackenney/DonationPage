@@ -10,10 +10,10 @@ export const Header = () => {
 
   return (
     <>
-      <header className="z-50 fixed top-0 left-0 w-full flex flex-col lg:flex-row lg:border-b lg:border-neutral-200 lg:bg-white">
+      <header className="z-50 fixed top-0 left-0 w-full flex flex-col lg:flex-row lg:border-b lg:border-neutral-200 lg:bg-offWhite">
         <div className="z-50 w-full lg:max-w-7xl lg:mx-auto">
-          <div className="px-8 py-4 flex justify-between items-center border-b border-neutral-200 lg:border-none bg-white">
-            <a href="#home" className="text-xl text-TextColor2 lg:text-2xl font-bold">
+          <div className="px-8 py-4 flex justify-between items-center border-b border-neutral-200 lg:border-none bg-offWhite">
+            <a href="#home" className="text-xl text-nearBlack lg:text-2xl font-bold">
             Maroon Strategy
             </a>
             <Button
@@ -51,7 +51,7 @@ export const Header = () => {
       </header>
       <div className={cx(
         "z-40 lg:hidden fixed w-full h-full transition-colors",
-        !isOpen ? "hidden" : "block bg-black/30"
+        !isOpen ? "hidden" : "block bg-nearBlack/30"
       )}>
       </div>
     </>

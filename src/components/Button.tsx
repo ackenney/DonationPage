@@ -5,10 +5,10 @@ import { cva, type VariantProps } from "class-variance-authority";
 const buttonVariants = cva("inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0", {
   variants: {
     variant: {
-      default: "bg-sky-800 text-white hover:bg-sky-800/90 focus-visible:ring-teal-800 focus-visible:ring-offset-white",
-      secondary: "bg-white text-teal-800 hover:bg-white/90 focus-visible:ring-white focus-visible:ring-offset-teal-800",
-      outline: "border border-teal-800 bg-white text-teal-800 hover:bg-neutral-100 focus-visible:ring-teal-800 focus-visible:ring-offset-white",
-      ghost: "bg-white text-black hover:bg-neutral-100",
+      default: "bg-nearGreen text-offWhite hover:bg-nearGreen/90 focus-visible:ring-nearGreen focus-visible:ring-offset-offWhite",
+      secondary: "bg-offWhite text-nearGreen hover:bg-offWhite/90 focus-visible:ring-offWhite focus-visible:ring-offset-nearGreen",
+      outline: "border border-nearGreen bg-offWhite text-nearGreen hover:bg-neutral-100 focus-visible:ring-nearGreen focus-visible:ring-offset-offWhite",
+      ghost: "bg-offWhite text-nearBlack hover:bg-neutral-100",
     },
     size: {
       default: "h-10 px-4 py-2",

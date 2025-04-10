@@ -9,10 +9,10 @@ export const ResourceItem = ({
 }: ResourceItemProps) => {
   return (
     <article className="flex flex-col gap-2">
-      <span className="text-lg text-sky-900 font-bold">
+      <span className="text-lg text-navy font-bold">
         {question}
       </span>
-      <p className="text-sm text-TextColor2 leading-6">
+      <p className="text-sm text-nearBlack leading-6">
         {children}
       </p>
     </article>

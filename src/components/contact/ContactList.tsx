@@ -8,7 +8,7 @@ export const ContactList = ({
   children,
 }: ContactListProps) => {
   return (
-    <div className="flex flex-col text-sky-800">
+    <div className="flex flex-col text-nearGreen">
       <span className="text-sm font-medium">{title}</span>
       <span className="font-bold">{children}</span>
     </div>

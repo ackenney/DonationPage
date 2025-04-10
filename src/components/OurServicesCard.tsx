@@ -11,14 +11,14 @@ export const OurServicesCard = ({
 }: OurServicesCardProps) => {
   return (
     <div className="flex flex-col gap-y-8 items-center">
-      <div className="flex justify-center items-center w-16 h-16 py-4 bg-sky-800 rounded-full">
+      <div className="flex justify-center items-center w-16 h-16 py-4 bg-nearGreen rounded-full">
         {icon}
       </div>
       <div className="flex flex-col gap-y-2">
-        <span className="text-center text-TextColor2 lg:text-nowrap text-xl font-bold">
+        <span className="text-center text-nearBlack lg:text-nowrap text-xl font-bold">
           {title}
         </span>
-        <p className="text-center text-TextColor2 leading-loose lg:leading-9">
+        <p className="text-center text-nearBlack leading-loose lg:leading-9">
           {children} 
         </p>
       </div>

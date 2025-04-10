@@ -9,14 +9,14 @@ import img4 from "/images/Document-3757720690.png"
 
 export default function ApplicationSection() {
   return (
-    <Section id="application" className="bg-sky-800">
+    <Section id="application" className="bg-nearGreen">
       <div className="w-full lg:max-w-7xl lg:mx-auto bg-[url('/images/philadelphia-skyline-1219756.jpg')] bg-cover bg-no-repeat bg-top bg-fixed">
-        <div className="flex flex-col gap-16 items-center p-8 lg:py-20 backdrop-grayscale bg-gradient-to-r from-sky-800 via-sky-800/50 via-50% to-sky-800">
+        <div className="flex flex-col gap-16 items-center p-8 lg:py-20 backdrop-grayscale bg-gradient-to-r from-nearGreen via-nearGreen/50 via-50% to-nearGreen">
         <div className="flex flex-col text-center">
-          <span className="text-xs lg:text-sm text-TextColor1 tracking-widest">
+          <span className="text-xs lg:text-sm text-salmon tracking-widest">
             APPLICATIONS
           </span>
-          <h2 className="text-3xl lg:text-5xl text-white font-bold">
+          <h2 className="text-3xl lg:text-5xl text-navy font-bold">
             Get Involved
           </h2>
         </div>

@@ -3,11 +3,11 @@ import { Section } from "../../components/layouts/Section";
 
 export default function ResourceSection() {
   return (
-    <Section id="resource" className="bg-sky-100/70">
+    <Section id="resource" className="bg-lightBlue">
       <div className="w-full lg:max-w-7xl lg:mx-auto p-8 lg:py-28 flex flex-col items-center gap-16">
         <div className="flex flex-col items-center">
-          <span className="text-xs lg:text-sm text-TextColor1 tracking-widest">LEARN MORE</span>
-          <h2 className="text-3xl lg:text-5xl text-sky-900 text-center font-bold">Resources</h2>
+          <span className="text-xs lg:text-sm text-navy tracking-widest">RESOURCES</span>
+          <h2 className="text-3xl lg:text-5xl text-salmon text-center font-bold">Learn More</h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
