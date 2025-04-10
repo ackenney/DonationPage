@@ -11,25 +11,25 @@ export default function OurServicesSection() {
             SERVICES
           </span> 
           <h2 className="text-3xl lg:text-5xl text-TextColor2 font-bold">
-            How We Help Our Community
+            What We Do
           </h2>
         </div>
-        <div className="flex flex-col lg:flex-row lg:justify-between gap-y-16 lg:gap-x-6">
+        <div className="flex flex-col lg:flex-col lg:justify-between gap-y-16 lg:gap-x-6">
           <OurServicesCard
-            title="Section 1"
+            title="Library Fund"
             icon={<House size={36} className="text-white" />}
           >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.          </OurServicesCard>
+          The Literacy Fund, which will collaborate with parents to match their child to a private certified reading specialist outside of school. Reading specialists are able to provide learning disability assessments if needed and to tailor one-on-one literacy instruction to children’s needs. Maroon Strategy will cover the costs to see reading specialists, as well as schedule and pay for transportation to and from these appointments.          </OurServicesCard>
           <OurServicesCard
-            title="Section 2"
+            title="Summer Program"
             icon={<Glasses size={36} className="text-white" />}
           >
-           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.          </OurServicesCard>
+           Maroon Studio will begin during the summer of 2026, and operate for fifteen days, serving young people in grades 3rd-6th. We will offer high quality summer enrichment with experienced educators and teaching artists who focus on literacy as well as culturally significant modes of learning such as arts instruction.           </OurServicesCard>
           <OurServicesCard
-            title="Section 3"
+            title="Library Cut Grant"
             icon={<BookOpenText size={36} className="text-white" />}
           >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.          </OurServicesCard>
+          The Library Cut is a one-time grant for children (infant to 8th grade) to add books of their/their parents’ choice to their at-home libraries. Once parents and children select their books, Maroon Strategy purchases them directly to be shipped or delivered to homes.        </OurServicesCard>
         </div>
       </div>
     </Section>
