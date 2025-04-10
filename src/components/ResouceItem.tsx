@@ -1,12 +1,12 @@
-interface FAQItemProps {
+interface ResourceItemProps {
   question: string;
   children: React.ReactNode; 
 }
 
-export const FAQItem = ({
+export const ResourceItem = ({
   question,
   children,
-}: FAQItemProps) => {
+}: ResourceItemProps) => {
   return (
     <article className="flex flex-col gap-2">
       <span className="text-lg text-sky-900 font-bold">

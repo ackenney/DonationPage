@@ -1,4 +1,4 @@
-import FAQSection from "./sections/FAQSection";
+import ResourceSection from "./sections/ResourceSection";
 import HeroSection from "./sections/HeroSection";
 import AboutUsSection from "./sections/AboutUsSection";
 import ContactUsSection from "./sections/ContactUsSection";
@@ -14,7 +14,7 @@ export default function Home() {
       <AboutUsSection />
       <OurServicesSection />
       <ApplicationSection/>
-      <FAQSection />
+      <ResourceSection />
       <TeamSection />
       <ContactUsSection />
     </main>

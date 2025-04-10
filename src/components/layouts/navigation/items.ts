@@ -23,8 +23,8 @@ export const navigationItems: NavigationItem[] = [
   },
 
   {
-    label: "FAQ",
-    href: "#faq",
+    label: "Resources",
+    href: "#resource",
   },
   {
     label: "Our Team",
