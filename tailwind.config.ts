@@ -3,12 +3,15 @@ import defaultTheme from "tailwindcss/defaultTheme";
 
 export default {
   content: [
-    "./index.html",
+    "/index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
   
     extend: {
+      fontFamily: {
+        myfont: ['MyFont', 'sans-serif'],
+      },
       colors: {
         'color1': '#ff7849',
         'color2': '#969696',
@@ -20,15 +23,9 @@ export default {
         'lightBlue':'#88D2FF',
         'nearBlack':'#0D190F',
         'offWhite':'#FFFFF5',
-        
-
-
-
-
+    
       },
-      fontFamily: {
-        sans: ["Playfair", ...defaultTheme.fontFamily.sans],
-      },
+      
     },
   },
   plugins: [],

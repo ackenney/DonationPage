@@ -28,7 +28,7 @@ export const navigationItems: NavigationItem[] = [
   },
   {
     label: "Our Team",
-    href: "#team",
+    href: "#team2",
   },
   {
     label: "Contact Us",

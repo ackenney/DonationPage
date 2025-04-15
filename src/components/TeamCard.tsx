@@ -3,12 +3,13 @@ interface TeamCardProps {
   children: React.ReactNode;
   imageUrl: string;
   title: string;
+  member:string
 }
 
 export const TeamCard = ({
   children,
   imageUrl,
-
+member,
   title,
 }: TeamCardProps) => {
   return (
@@ -19,6 +20,7 @@ export const TeamCard = ({
       <div className="flex flex-col gap-1">
         <span className="text-sm font-bold">
           {title}
+          {member}
         </span>
         <p className="text-sm leading-1">
           {children}

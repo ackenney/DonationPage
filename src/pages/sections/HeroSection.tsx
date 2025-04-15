@@ -3,7 +3,7 @@ import { Button } from "../../components/Button";
 import { Section } from "../../components/layouts/Section";
 
 
-import img1 from "/images/rdne-6647119.jpg"
+import img1 from ".//../..//../public/images/rdne-6647119.jpg"
 
 export default function HeroSection() {
   return (

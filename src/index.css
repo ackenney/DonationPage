@@ -13,3 +13,14 @@ progress::-webkit-progress-value {
 progress::-moz-progress-bar {
   background-color: #115E59;
 }
+
+@font-face {
+  font-family: 'MyFont';
+  src: url('./assets/fonts/MyFont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'MyFont', sans-serif;
+}

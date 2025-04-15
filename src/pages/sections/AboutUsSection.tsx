@@ -1,6 +1,6 @@
 import { Section } from "../../components/layouts/Section";
 
-import img from "/images/rdne-6646981.jpg"
+import img from "../../../public/images/rdne-6646981.jpg"
 
 export default function AboutUsSection() {
   return (

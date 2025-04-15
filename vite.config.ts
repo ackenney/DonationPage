@@ -1,8 +1,28 @@
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import reactRefresh from '@vitejs/plugin-react-refresh'
 
-// https://vite.dev/config/
+
+
+const root = resolve(__dirname,'src')
+const outDir = resolve(__dirname,'dist')
+
+// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  base: "/DonationPage"
+  root,
+  plugins: [reactRefresh()],
+  build:{
+    outDir,
+    emptyOutDir: true,
+    rollupOptions:{
+      input:{
+        main: resolve(root, 'index.html'),
+        about: resolve(root, 'about', 'index.html'),
+        app: resolve(root, 'app', 'index.html'),
+      
+
+      }
+    }
+  }
+
 })

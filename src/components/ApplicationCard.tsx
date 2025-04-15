@@ -6,10 +6,12 @@ interface ApplicationCardProps {
   children: React.ReactNode;
   imageUrl: string;
   title: string;
+  link: string;
 }
 
 export const ApplicationCard = ({
   children,
+  link,
 /*   imageUrl, */
 
   title,
@@ -32,8 +34,20 @@ export const ApplicationCard = ({
       </div>
       <Button className="font-bold" size="sm">
         <Pen className="size-4" />
-        Apply Now
-      </Button>
+        <a href={link}>
+          Apply Now
+        </a>
+        </Button>
+
+
+    {/*   <Button className="text-md font-bold" size="lg">
+      
+      <a href="https://www.gofundme.com/">
+          Donate Now
+      </a>
+    </Button> */}
+
+
     </div>
   );
 };
