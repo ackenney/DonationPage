@@ -49,7 +49,7 @@ export default function TeamSection() {
             <h2 className="text-3xl lg:text-1xl text-salmon font-bold">Founders</h2>
           </div>
         
-        <div className="grid grid-cols-1  md:grid-cols-1 lg:grid-cols-1 gap-8">
+        <div className="grid grid-cols-1  md:grid-cols-1 lg:grid-cols-4 gap-8">
           {teamMembers.map((member, index) => (
             <div key={index} className="bg-offWhite rounded-lg shadow-md p-4">
               <div className="h- mb-4 flex items-center justify-center">
