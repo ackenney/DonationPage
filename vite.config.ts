@@ -11,6 +11,7 @@ const outDir = resolve(__dirname,'dist')
 export default defineConfig({
   root,
   plugins: [reactRefresh()],
+  base: "/DonationPage",
   build:{
     outDir,
     emptyOutDir: true,
