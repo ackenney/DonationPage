@@ -49,18 +49,18 @@ export default function TeamSection() {
             <h2 className="text-3xl lg:text-1xl text-salmon font-bold">Founders</h2>
           </div>
         
-        <div className="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1  md:grid-cols-1 lg:grid-cols-1 gap-8">
           {teamMembers.map((member, index) => (
             <div key={index} className="bg-offWhite rounded-lg shadow-md p-4">
-              <div className="h-40 mb-4 flex items-center justify-center">
+              <div className="h- mb-4 flex items-center justify-center">
               <img
                   src={member.imgUrl}
                   alt={member.name}
                   className="w-40 h-40 object-cover rounded-full"
                 />
               </div>
-              <h3 className="text-xl font-bold mb-2">{member.role}</h3>
-              <p className="text-sm font-semibold mb-2">{member.name}</p>
+              <h3 className="text-xl font-bold mb-2 text-center">{member.role}</h3>
+              <p className="text-sm font-semibold text-center mb-2">{member.name}</p>
               <p className="text-sm text-nearBlack">{member.description}</p>
             </div>
           ))}
