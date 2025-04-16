@@ -1,4 +1,4 @@
-import { Mail, MapPin, PhoneCall } from "lucide-react";
+import { Mail } from "lucide-react";
 
 import { Section } from "../../components/layouts/Section";
 import { ContactItem } from "../../components/contact/ContactItem";
@@ -19,7 +19,7 @@ export default function ContactUsSection() {
 
         <div className="w-full flex sm:justify-center lg:justify-start">
           <div className="lg:w-full flex flex-col text-nearBlack lg:flex-row lg:justify-around gap-8">
-            <ContactItem
+        {/*     <ContactItem
               heading="Location"
               icon={<MapPin className="size-12 text-nearGreen" />}
             >
@@ -29,7 +29,7 @@ export default function ContactUsSection() {
                 United Kingdom
               </ContactList>
             </ContactItem>
-
+ */}
             <ContactItem
               heading="Email"
               icon={<Mail className="size-12 text-nearGreen" />}
@@ -41,7 +41,7 @@ export default function ContactUsSection() {
       
             </ContactItem>
 
-            <ContactItem
+  {/*           <ContactItem
               heading="Phone"
               icon={<PhoneCall className="size-12 text-nearGreen" />}
             >
@@ -51,7 +51,7 @@ export default function ContactUsSection() {
               <ContactList title="Mobile">
                 +00 000-0000-0000
               </ContactList>
-            </ContactItem>
+            </ContactItem> */}
           </div>
         </div>
       </div>
