@@ -14,8 +14,7 @@ export default function HeroSection() {
             Mission Statement
           </h1>
           <p className="lg:text-lg text-nearBlack leading-loose lg:leading-10">
-          According to the Pennsylvania System of School Assessment, 34.2% of Philly students in grades 3-8 scored proficient or above on English Language Arts in 2023-24 — the same percentage as in 2022-23. Statewide, students’ English Language Arts proficiency decreased from 54.5% in 2022-23 to 53.9% in 2023-24. Test scores, however, don’t tell a whole story. Across the city, parents, reading specialists, teachers, advocates, and other community members work hard to support children’s learning needs, but many do not have the capacity to solve for multiple factors that are consequences of poverty—and certainly not for every student. Maroon Strategy uses a one-on-one approach and taps into the cultural strengths and pride from which Black students in Philly come. 
-          </p>
+          Maroon Strategy’s mission is to develop strong readers by filling funding and access gaps for Black children who face multiple barriers to traditional literacy—interpreting and communicating in the written word—so they may merge skilled reading with the creative and critical literacies already instilled in them by their families, communities, and cultures.            </p>
           
           <Button className="text-md font-bold" size="lg">
       
