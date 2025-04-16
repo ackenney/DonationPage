@@ -58,6 +58,9 @@ input[type=text]{
   border-radius:5px;
 }
 
+input:focus{
+  outline: 2px solid #F2655A;     /* oranges! yey */
+}
 
 /* button{
   font-family: 'TTNorms', sans-serif;
