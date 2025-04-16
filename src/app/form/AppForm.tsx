@@ -66,7 +66,7 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
   
 
   return (
-      <div className={`app-form`}>
+      <div className={`app-form`} >
         <div className="container-fluid">
           <div className="row justify-content-center">
             <div className="col-md-6">
@@ -107,8 +107,8 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
                 <div className="form-group row">
                   <div className="col-sm-10">
                     <input type="number" id="number" name="number" className="form-control" value={formData.number} onChange={handleInputChange} />
-                    <p></p>
-                    <div className="mt-3 d-flex justify-content-center">
+                  
+                    <div className="mt-4  grid-cols-1 justify-content-right">
                       <button
                           type="button"
                           className={`btn btn-lg ${!canPrintToPdf() ? 'btn-secondary' : 'btn-success'}`}
@@ -117,7 +117,15 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
                       >
                         Download
                       </button>
-
+                    
+                      <button
+                          type="button"
+                          className={`btn btn-lg ${!canPrintToPdf() ? 'btn-secondary' : 'btn-success'}`}
+                          disabled={!canPrintToPdf()}
+                          onClick={printToPdf}
+                      >
+                        Submit
+                      </button>
                       
                       
                       

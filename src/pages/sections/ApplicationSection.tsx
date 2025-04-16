@@ -32,19 +32,19 @@ export default function ApplicationSection() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua          </ApplicationCard>
           <ApplicationCard
             imageUrl={img2}
-            title="Job Application"
+            title="Reader Application"
             link={"/DonationPage/app/"}
           >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua          </ApplicationCard>
           <ApplicationCard
             imageUrl={img3}
-            title="Grants Application"
+            title="Grant Application"
             link={"/DonationPage/app/"}
           >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua          </ApplicationCard>
           <ApplicationCard
             imageUrl={img4}
-            title="Summer Program"
+            title="Summer Application"
             link={"/DonationPage/app/"}
           >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua          </ApplicationCard>

@@ -2,17 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-progress::-webkit-progress-bar {
-  background-color: #e5e5e5;
-}
 
-progress::-webkit-progress-value {
-  background-color: #115E59;
-}
-
-progress::-moz-progress-bar {
-  background-color: #115E59;
-}
 
 @font-face {
   font-family: 'MyFont';
@@ -21,6 +11,45 @@ progress::-moz-progress-bar {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Calluna';
+  src: url('./assets/fonts/Calluna_Sans_Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  
+}
+
+@font-face {
+  font-family: 'TTNorms';
+  src: url('./assets/fonts/TTNormsProRegular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 body {
-  font-family: 'MyFont', sans-serif;
+  font-family: 'TTNorms', sans-serif;
+}
+
+h1{
+  font-family: 'Calluna', sans-serif;
+  letter-spacing: 5px;
+}
+ h2{
+  font-family: 'Calluna', sans-serif;
+  letter-spacing: 5px;
+}
+
+h3{
+  font-family: 'TTNorms', sans-serif;
+}
+ 
+span{
+  font-family: 'Calluna', sans-serif;
+  letter-spacing: 2px;
+}
+
+a{
+  font-family: 'Calluna', sans-serif;
+  letter-spacing: 1px;
 }
