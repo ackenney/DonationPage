@@ -121,7 +121,7 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
                 <label htmlFor="number" className="col-sm-4 col-form-label"><strong>Phone Number:</strong></label>
                 <div className="form-group row">
                   <div className="col-sm-10">
-                    <input type="tel" required id="number" name="number" placeholder="### - ### - ####" pattern='/^[\+]?[0-9]{0,3}\W?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/'className="form-control"  value={formData.number} onChange={handleInputChange} />
+                    <input type="tel" required id="number" name="number" placeholder="### - ### - ####" pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'className="form-control"  value={formData.number} onChange={handleInputChange} />
                   
                     <div className="mt-4  grid-cols-1 justify-content-right">
                       <button
