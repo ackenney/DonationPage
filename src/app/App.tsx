@@ -5,7 +5,8 @@ import AppForm from "./form/AppForm";
 
 const App: React.FC = () => {
   const [formData, setFormData] = useState<AppFormData>({
-    name: '',
+    fname: '',
+    lname: '',
     date: '',
     email: '',
     address: '',

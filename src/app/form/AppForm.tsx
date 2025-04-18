@@ -33,7 +33,8 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
 
   const canPrintToPdf = (): boolean => {
     return (
-        validateName(formData.name) &&
+        validateName(formData.fname) &&
+        validateName(formData.lname) &&
         validateDate(formData.date) &&
         validateEmail(formData.email) &&
         validateAddress(formData.address) &&
@@ -52,14 +53,15 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
       autoTable(doc, {
         startY: 20,
         body: [
-          ['Name', formData.name],
+          ['First Name', formData.fname],
+          ['Last Name', formData.lname],
           ['Date', formData.date],
           ['Email', formData.email],
           ['Address', formData.address],
           ['Number', formData.number],
         ],
       });
-      doc.save('docForm (' + formData.name + ").pdf");
+      doc.save('docForm (' + formData.fname +'_'+ formData.lname + ").pdf");
     }
   };
 
@@ -76,37 +78,48 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
                 </div>
                 <div className="d-flex justify-content-between align-items-center">
                   <h1>Application Form Testing</h1>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
-                <label htmlFor="name" className="col-sm-2 col-form-label">
-                  <span><strong>Name:</strong></span>
+                <label htmlFor="fname" className="col-sm-2 col-form-label">
+                  <span><strong>First Name:</strong></span>
                 </label>
                 <div className="form-group row">
                   <div className="col-sm-10">
-                    <input type="text" id="name" name="name" className="form-control" value={formData.name} onChange={handleInputChange} />
+                    <input type="text" id="fname" required   placeholder="test" name="fname" className="form-control" value={formData.fname} onChange={handleInputChange} />
                   </div>
                 </div>
-                <label htmlFor="date" className="col-sm-2 col-form-label"><strong>Date:</strong></label>
+                <label htmlFor="lname" className="col-sm-2 col-form-label">
+                  <span><strong>Last Name:</strong></span>
+                </label>
                 <div className="form-group row">
                   <div className="col-sm-10">
-                    <input type="date" id="date" name="date" className="form-control" value={formData.date} onChange={handleInputChange} />
+                    <input type="text" id="lname" required   placeholder="test" name="lname" className="form-control" value={formData.lname} onChange={handleInputChange} />
+                  </div>
+                </div>
+
+
+                <label htmlFor="date"  className="col-sm-2 col-form-label"><strong>Date:</strong></label>
+                <div className="form-group row">
+                  <div className="col-sm-10">
+                    <input type="date" required id="date" name="date" className="form-control" value={formData.date} onChange={handleInputChange} />
                   </div>
                 </div>
                 <label htmlFor="email" className="col-sm-2 col-form-label"><strong>Email:</strong></label>
                 <div className="form-group row">
                   <div className="col-sm-10">
-                    <input type="email" id="email" name="email" className="form-control" value={formData.email} onChange={handleInputChange} />
+                    <input type="email" id="email" required  name="email" className="form-control" value={formData.email} onChange={handleInputChange} />
                   </div>
                 </div>
                 <label htmlFor="address" className="col-sm-2 col-form-label"><strong>Address:</strong></label>
                 <div className="form-group row">
                   <div className="col-sm-10">
-                    <input type="text" id="address" name="address" className="form-control" value={formData.address} onChange={handleInputChange} />
+                    <input type="text" required id="address" name="address" className="form-control" value={formData.address} onChange={handleInputChange} />
                   </div>
                 </div>
                 <label htmlFor="number" className="col-sm-4 col-form-label"><strong>Number:</strong></label>
                 <div className="form-group row">
                   <div className="col-sm-10">
-                    <input type="number" id="number" name="number" className="form-control" value={formData.number} onChange={handleInputChange} />
+                    <input type="number" required id="number" name="number" className="form-control" value={formData.number} onChange={handleInputChange} />
                   
                     <div className="mt-4  grid-cols-1 justify-content-right">
                       <button

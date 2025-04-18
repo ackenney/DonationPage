@@ -1,5 +1,6 @@
 export interface AppFormData {
-  name: string;
+  fname: string;
+  lname: string;
   date: string;
   email: string;
   address: string;

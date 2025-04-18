@@ -57,9 +57,19 @@ input{
 input[type=text]{
   border-radius:5px;
 }
+input[value=text]{
+  border-radius:5px;
+}
+
+input:required {
+  border: 2px solid #6AA870;
+}
+input:required:invalid {
+  border: 2px solid #F2655A;
+}
 
 input:focus{
-  outline: 2px solid #F2655A;     /* oranges! yey */
+  outline: 2px solid #293954;     /* oranges! yey */
 }
 
 /* button{
