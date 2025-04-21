@@ -18,6 +18,8 @@ const App: React.FC = () => {
         <AppForm formData={formData} setFormData={setFormData} />
       </div>
   );
+
 };
+
 
 export default App;

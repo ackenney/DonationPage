@@ -4,6 +4,7 @@ import autoTable from 'jspdf-autotable';
 import {validateAddress, validateNumber, validateDate, validateEmail, validateName} from "./AppFormValidation";
 import {AppFormData} from "./AppFormData";
 import "./AppForm.scss";
+import {Footer} from "../../components/layouts/Footer"
 
 
 /* import {exp} from "mathjs";
@@ -142,7 +143,14 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
                         Submit
                       </button>
                       
-                      
+                      <footer className="bg-nearGreen">
+      <div className="w-full lg:max-w-7xl lg:mx-auto p-8 flex flex-col gap-4 lg:gap-8">
+        
+        <span className="text-offWhite text-sm font-medium">
+        Maroon Strategy 
+        </span>
+      </div>
+    </footer>
                       
                     </div>
                   </div>
@@ -152,6 +160,8 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
           </div>
         </div>
       </div>
+
+      
   );
 };
 
