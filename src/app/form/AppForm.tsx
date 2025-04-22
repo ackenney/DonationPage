@@ -24,9 +24,9 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
 
 
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+/*   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-  };
+  }; */
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = event.target;
@@ -94,12 +94,14 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
     e.preventDefault();
     try {
         const document = await generatePDF();
+        if (!document) {
+            throw new Error("Failed to generate PDF.");
+        }
         await sendEmailWithAttachment(document);
     } catch (error) {
         console.error("Error submitting form:", error);
     }
 };
-
 
 
 interface PdfDoc {
@@ -128,7 +130,7 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                 attachment: [
                     {
                         content: base64Pdf,
-                        name: 'userDetails.pdf',
+                        name: 'docForm (' + formData.fname +'_'+ formData.lname + ").pdf",
                     },
                 ],
             },
@@ -216,7 +218,10 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                       </button>
                     
 
-                      <input type="submit" name="submit" id="submit" value="Submit" />
+                      <button type="submit" name="submit" id="submit" value="Submit" className={`btn btn-lg ${!canPrintToPdf() ? 'btn-secondary' : 'btn-success'}`}
+                        disabled={!canPrintToPdf()}>
+                        Submit
+                        </button>
                     
                 
 
