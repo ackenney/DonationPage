@@ -5,8 +5,6 @@ import {validateAddress, validateNumber, validateDate, validateEmail, validateNa
 import {AppFormData} from "./AppFormData";
 import axios from "axios";
 import "./AppForm.scss";
-const apiKey = process.env.REACT_APP_API_KEY
-
 
 
 
@@ -139,7 +137,7 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
             {
                 headers: {
                     accept: 'application/json',
-                    'api-key': apiKey,
+                    'api-key': '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',
                     'content-type': 'application/json',
                 },
             }
