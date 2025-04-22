@@ -3,8 +3,9 @@ import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import {validateAddress, validateNumber, validateDate, validateEmail, validateName} from "./AppFormValidation";
 import {AppFormData} from "./AppFormData";
+import axios from "axios";
 import "./AppForm.scss";
-import {Footer} from "../../components/layouts/Footer"
+
 
 
 /* import {exp} from "mathjs";
@@ -65,15 +66,95 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
       doc.save('docForm (' + formData.fname +'_'+ formData.lname + ").pdf");
     }
   };
+  const generatePDF =()=>{
+    if (formRef.current) {
+      if (!canPrintToPdf()) {
+        return;
+      }
 
-  
+      const doc = new jsPDF();
+      doc.text('Test Application Form', 10, 10);
+      autoTable(doc, {
+        startY: 20,
+        body: [
+          ['First Name', formData.fname],
+          ['Last Name', formData.lname],
+          ['Date', formData.date],
+          ['Email', formData.email],
+          ['Address', formData.address],
+          ['Number', formData.number],
+        ],
+      });
+      doc.save('docForm (' + formData.fname +'_'+ formData.lname + ").pdf");
+      return doc;
+    }
+  };
+
+  const submitForm = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+        const document = await generatePDF();
+        await sendEmailWithAttachment(document);
+    } catch (error) {
+        console.error("Error submitting form:", error);
+    }
+};
+
+
+
+interface PdfDoc {
+    output: (type: string) => string;
+}
+
+const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
+    try {
+        const base64Pdf = pdfDoc.output('datauristring').split(',')[1];
+
+        const response = await axios.post(
+            'https://api.brevo.com/v3/smtp/email',
+            {
+                sender: {
+                    name: 'ackenney',
+                    email: 'ackenney22@gmail.com',
+                },
+                to: [
+                    {
+                        name: 'John Snow',
+                        email: 'ackenney@gmail.com',
+                    },
+                ],
+                subject: 'New Application',
+                htmlContent: 'test',
+                attachment: [
+                    {
+                        content: base64Pdf,
+                        name: 'userDetails.pdf',
+                    },
+                ],
+            },
+            {
+                headers: {
+                    accept: 'application/json',
+                    'api-key': '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',
+                    'content-type': 'application/json',
+                },
+            }
+        );
+
+        console.log('Email sent', response.data);
+        alert('Registration Successful!');
+    } catch (error) {
+        console.error('Error sending email:', error);
+    }
+};
+
 
   return (
       <div className={`app-form`} >
         <div className="container-fluid">
           <div className="row justify-content-center">
             <div className="col-md-6">
-              <form onSubmit={handleSubmit} ref={formRef} className="mt-5">
+              <form onSubmit={submitForm} ref={formRef} className="mt-5">
                 <div className="d-flex justify-content-between align-items-center">
                   
                 </div>
@@ -134,23 +215,11 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
                         Download
                       </button>
                     
-                      <button
-                          type="button"
-                          className={`btn btn-lg ${!canPrintToPdf() ? 'btn-secondary' : 'btn-success'}`}
-                          disabled={!canPrintToPdf()}
-                          onClick={printToPdf}
-                      >
-                        Submit
-                      </button>
-                      
-                      <footer className="bg-nearGreen">
-      <div className="w-full lg:max-w-7xl lg:mx-auto p-8 flex flex-col gap-4 lg:gap-8">
-        
-        <span className="text-offWhite text-sm font-medium">
-        Maroon Strategy 
-        </span>
-      </div>
-    </footer>
+
+                      <input type="submit" name="submit" id="submit" value="Submit" />
+                    
+                
+
                       
                     </div>
                   </div>
