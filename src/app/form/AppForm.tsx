@@ -4,12 +4,22 @@ import autoTable from 'jspdf-autotable';
 import {validateAddress, validateNumber, validateDate, validateEmail, validateName} from "./AppFormValidation";
 import {AppFormData} from "./AppFormData";
 import axios from "axios";
+
+const apiKey = import.meta.env.VITE_API_KEY;
+const fromEmail = import.meta.env.VITE_FROM_EMAIL;
+
+
 import "./AppForm.scss";
-const API_KEY = import.meta.env.VITE_API_KEY
 
-
+/* const API_KEY = import.meta.env.VITE_API_KEY
+ */
 /* import {exp} from "mathjs";
  */
+console.log(import.meta.env.VITE_APP_NAME);
+
+
+
+
 export interface AppFormProps {
   formData: AppFormData;
 
@@ -63,7 +73,7 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
           ['Number', formData.number],
         ],
       });
-      doc.save('docForm (' + formData.fname +'_'+ formData.lname + ").pdf");
+      doc.save('docForm (' + formData.fname +'_'+ apiKey+ ").pdf");
     }
   };
   const generatePDF =()=>{
@@ -117,16 +127,16 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
             {
                 sender: {
                     name: 'ackenney',
-                    email: 'ackenney22@gmail.com',
+                    email: fromEmail,
                 },
                 to: [
                     {
-                        name: 'John Snow',
-                        email: 'ackenney@gmail.com',
+                        name: formData.fname +' '+ formData.lname,
+                        email: formData.email,
                     },
                 ],
-                subject: 'New Application',
-                htmlContent: 'test',
+                subject: formData.fname +'_'+ formData.lname + ' Application type',
+                htmlContent: 'Thank you for applying!',
                 attachment: [
                     {
                         content: base64Pdf,
@@ -137,7 +147,7 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
             {
                 headers: {
                     accept: 'application/json',
-                    'api-key': '${API_KEY}',
+                    'api-key': apiKey,
                     'content-type': 'application/json',
                 },
             }
@@ -221,10 +231,7 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                         disabled={!canPrintToPdf()}>
                         Submit
                         </button>
-                        <button type="submit" name="submit" id="submit" value="Submit" className={`btn btn-lg ${!canPrintToPdf() ? 'btn-secondary' : 'btn-success'}`}
-                        disabled={!canPrintToPdf()}>
-                        {API_KEY}
-                        </button>
+                      
                     
                 
 

@@ -7,6 +7,7 @@ export default function App() {
     <>
       <Header />
       <Home />
+      <p>{import.meta.env.VITE_API_URL}</p>
       <Footer />
     </>
   );
