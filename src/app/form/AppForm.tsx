@@ -128,6 +128,14 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                 sender: {
                     name: 'Maroon Strategy',
                     email: fromEmail,
+                    "ips": [
+                      {
+                        "ip": "185.199.108.153",
+                        "domain": "ackenney.com",
+                      "weight": 50
+                          
+                      }
+                 ],
                 },
                 to: [
                     {
@@ -150,7 +158,9 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                     'api-key': apiKey,
                     'content-type': 'application/json',
                 },
+                
             }
+      
         );
 
         console.log('Email sent', response.data);
