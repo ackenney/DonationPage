@@ -126,7 +126,7 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
             'https://api.brevo.com/v3/smtp/email',
             {
                 sender: {
-                    name: 'ackenney',
+                    name: 'Maroon Strategy',
                     email: fromEmail,
                 },
                 to: [
@@ -135,7 +135,7 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                         email: formData.email,
                     },
                 ],
-                subject: formData.fname +'_'+ formData.lname + ' Application type',
+                subject: formData.fname +' '+ formData.lname + ' Application type',
                 htmlContent: 'Thank you for applying!',
                 attachment: [
                     {
@@ -154,7 +154,7 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
         );
 
         console.log('Email sent', response.data);
-        alert('Registration Successful!');
+        alert('Application Sent Successfully!');
     } catch (error) {
         console.error('Error sending email:', error);
     }
