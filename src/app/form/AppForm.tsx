@@ -3,12 +3,23 @@ import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import {validateAddress, validateNumber, validateDate, validateEmail, validateName} from "./AppFormValidation";
 import {AppFormData} from "./AppFormData";
+import axios from "axios";
+
+const apiKey = import.meta.env.VITE_API_KEY;
+const fromEmail = import.meta.env.VITE_FROM_EMAIL;
+
+
 import "./AppForm.scss";
-import {Footer} from "../../components/layouts/Footer"
 
-
+/* const API_KEY = import.meta.env.VITE_API_KEY
+ */
 /* import {exp} from "mathjs";
  */
+console.log(import.meta.env.VITE_APP_NAME);
+
+
+
+
 export interface AppFormProps {
   formData: AppFormData;
 
@@ -23,9 +34,9 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
 
 
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+/*   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-  };
+  }; */
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = event.target;
@@ -62,7 +73,30 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
           ['Number', formData.number],
         ],
       });
+      doc.save('docForm (' + formData.fname +'_'+ apiKey+ ").pdf");
+    }
+  };
+  const generatePDF =()=>{
+    if (formRef.current) {
+      if (!canPrintToPdf()) {
+        return;
+      }
+
+      const doc = new jsPDF();
+      doc.text('Test Application Form', 10, 10);
+      autoTable(doc, {
+        startY: 20,
+        body: [
+          ['First Name', formData.fname],
+          ['Last Name', formData.lname],
+          ['Date', formData.date],
+          ['Email', formData.email],
+          ['Address', formData.address],
+          ['Number', formData.number],
+        ],
+      });
       doc.save('docForm (' + formData.fname +'_'+ formData.lname + ").pdf");
+      return doc;
     }
   };
 <<<<<<< HEAD
@@ -152,14 +186,73 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
 =======
 >>>>>>> parent of b7969a3 (revert)
 
-  
+  const submitForm = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+        const document = await generatePDF();
+        if (!document) {
+            throw new Error("Failed to generate PDF.");
+        }
+        await sendEmailWithAttachment(document);
+    } catch (error) {
+        console.error("Error submitting form:", error);
+    }
+};
+
+
+interface PdfDoc {
+    output: (type: string) => string;
+}
+
+const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
+    try {
+        const base64Pdf = pdfDoc.output('datauristring').split(',')[1];
+
+        const response = await axios.post(
+            'https://api.brevo.com/v3/smtp/email',
+            {
+                sender: {
+                    name: 'ackenney',
+                    email: fromEmail,
+                },
+                to: [
+                    {
+                        name: formData.fname +' '+ formData.lname,
+                        email: formData.email,
+                    },
+                ],
+                subject: formData.fname +'_'+ formData.lname + ' Application type',
+                htmlContent: 'Thank you for applying!',
+                attachment: [
+                    {
+                        content: base64Pdf,
+                        name: 'docForm (' + formData.fname +'_'+ formData.lname + ").pdf",
+                    },
+                ],
+            },
+            {
+                headers: {
+                    accept: 'application/json',
+                    'api-key': apiKey,
+                    'content-type': 'application/json',
+                },
+            }
+        );
+
+        console.log('Email sent', response.data);
+        alert('Registration Successful!');
+    } catch (error) {
+        console.error('Error sending email:', error);
+    }
+};
+
 
   return (
       <div className={`app-form`} >
         <div className="container-fluid">
           <div className="row justify-content-center">
             <div className="col-md-6">
-              <form onSubmit={handleSubmit} ref={formRef} className="mt-5">
+              <form onSubmit={submitForm} ref={formRef} className="mt-5">
                 <div className="d-flex justify-content-between align-items-center">
                   
                 </div>
@@ -220,23 +313,14 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                         Download
                       </button>
                     
-                      <button
-                          type="button"
-                          className={`btn btn-lg ${!canPrintToPdf() ? 'btn-secondary' : 'btn-success'}`}
-                          disabled={!canPrintToPdf()}
-                          onClick={printToPdf}
-                      >
+                      <button type="submit" name="submit" id="submit" value="Submit" className={`btn btn-lg ${!canPrintToPdf() ? 'btn-secondary' : 'btn-success'}`}
+                        disabled={!canPrintToPdf()}>
                         Submit
-                      </button>
+                        </button>
                       
-                      <footer className="bg-nearGreen">
-      <div className="w-full lg:max-w-7xl lg:mx-auto p-8 flex flex-col gap-4 lg:gap-8">
-        
-        <span className="text-offWhite text-sm font-medium">
-        Maroon Strategy 
-        </span>
-      </div>
-    </footer>
+                    
+                
+
                       
                     </div>
                   </div>

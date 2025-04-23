@@ -2,6 +2,12 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
 
+import dotenv from 'dotenv';
+dotenv.config();
+
+const apiUrl = process.env.VITE_API_URL;
+const apiKey = process.env.VITE_API_KEY;
+const fromEmail = process.env.VITE_FROM_EMAIL;
 
 
 const root = resolve(__dirname,'src')
@@ -11,7 +17,12 @@ const outDir = resolve(__dirname,'dist')
 export default defineConfig({
   root,
   plugins: [reactRefresh()],
-  base: "/DonationPage",
+  define: {
+    __API_URL__: JSON.stringify(apiUrl),
+    __API_KEY__: JSON.stringify(apiKey),
+    __FROM_EMAIL__: JSON.stringify(fromEmail),
+},
+  base: "/",
   build:{
     outDir,
     emptyOutDir: true,
