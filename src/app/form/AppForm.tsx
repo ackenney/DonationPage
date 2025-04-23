@@ -5,7 +5,7 @@ import {validateAddress, validateNumber, validateDate, validateEmail, validateNa
 import {AppFormData} from "./AppFormData";
 import axios from "axios";
 import "./AppForm.scss";
-
+const API_KEY = import.meta.env.VITE_API_KEY
 
 
 /* import {exp} from "mathjs";
@@ -137,7 +137,7 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
             {
                 headers: {
                     accept: 'application/json',
-                    'api-key': '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',
+                    'api-key': '${API_KEY}',
                     'content-type': 'application/json',
                 },
             }
@@ -220,6 +220,10 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                       <button type="submit" name="submit" id="submit" value="Submit" className={`btn btn-lg ${!canPrintToPdf() ? 'btn-secondary' : 'btn-success'}`}
                         disabled={!canPrintToPdf()}>
                         Submit
+                        </button>
+                        <button type="submit" name="submit" id="submit" value="Submit" className={`btn btn-lg ${!canPrintToPdf() ? 'btn-secondary' : 'btn-success'}`}
+                        disabled={!canPrintToPdf()}>
+                        {API_KEY}
                         </button>
                     
                 
