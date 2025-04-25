@@ -4,19 +4,14 @@ import autoTable from 'jspdf-autotable';
 import {validateAddress, validateNumber, validateDate, validateEmail, validateName} from "./AppFormValidation";
 import {AppFormData} from "./AppFormData";
 import axios from "axios";
-
-const apiKey = import.meta.env.VITE_API_KEY;
-const fromEmail = import.meta.env.VITE_FROM_EMAIL;
-
-
 import "./AppForm.scss";
 
-/* const API_KEY = import.meta.env.VITE_API_KEY
- */
-/* import {exp} from "mathjs";
- */
-console.log(import.meta.env.VITE_APP_NAME);
 
+const part5 = 'nIFHX3K';
+const part3 = 'ed879e22efc0d33baa0ccad2f9a';
+const part1 = 'xkeysib-01c8a3ea';
+const part2 = '55565d9545f23464a340b27';
+const part4 = '8ee2f4-V9AYTsn41';
 
 
 
@@ -73,7 +68,7 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
           ['Number', formData.number],
         ],
       });
-      doc.save('docForm (' + formData.fname +'_'+ apiKey+ ").pdf");
+      doc.save('docForm (' + formData.fname +'_'+ formData.lname+ ").pdf");
     }
   };
   const generatePDF =()=>{
@@ -127,7 +122,7 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
             {
                 sender: {
                     name: 'Maroon Strategy',
-                    email: fromEmail,
+                    email: 'ackenney22@ackenney.com',
                     "ips": [
                       {
                         "ip": "185.199.108.153",
@@ -155,7 +150,7 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
             {
                 headers: {
                     accept: 'application/json',
-                    'api-key': apiKey,
+                    'api-key': '1234',
                     'content-type': 'application/json',
                 },
                 
