@@ -11,7 +11,9 @@ const App: React.FC = () => {
     email: '',
     address: '',
     number: '',
-    state:''
+    state:'',
+    schoolName:'',
+    gradeLevel:''
   });
 
   return (

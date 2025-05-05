@@ -50,7 +50,10 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
         validateEmail(formData.email) &&
         validateAddress(formData.address) &&
         validateNumber(formData.number)&&
-        validateName(formData.state)
+        validateName(formData.state) &&
+        validateName(formData.schoolName) &&
+        validateAddress(formData.gradeLevel)
+      
     );
   };
 
@@ -65,6 +68,8 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
       autoTable(doc, {
         startY: 20,
         body: [
+          ['School Grade Level', formData.gradeLevel],
+          ['School Name', formData.schoolName],
           ['First Name', formData.fname],
           ['Last Name', formData.lname],
           ['Date', formData.date],
@@ -88,6 +93,8 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
       autoTable(doc, {
         startY: 20,
         body: [
+          ['School Grade Level', formData.gradeLevel],
+          ['School Name', formData.schoolName],
           ['First Name', formData.fname],
           ['Last Name', formData.lname],
           ['Date', formData.date],
@@ -187,6 +194,42 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
                 
+
+                <label htmlFor="gradeLevel" className="col-sm-2 col-form-label"><strong>Student Grade Level:</strong></label>
+                <div className="form-group row">
+                  <div className="col-sm-10">
+                    <select
+                      id="gradeLevel"
+                      name="gradeLevel"
+                      className="form-control"
+                      required
+                      value={formData.gradeLevel}
+                      
+                      onChange={handleInputChange}
+                    >
+                      <option value="">Select a Grade Level</option>
+                      <option value="1st">1st</option>
+                      <option value="2nd">2nd</option>
+                      <option value="3rd">3rd</option>
+                      <option value="4th">4th</option>
+                      <option value="5th">5th</option>
+                      <option value="6th">6th</option>
+            
+                    </select>
+                  </div>
+                </div>
+
+
+                <label htmlFor="fname" className="col-sm-2 col-form-label">
+                  <span><strong>School Name:</strong></span>
+                </label>
+                <div className="form-group row">
+                  <div className="col-sm-10">
+                    <input type="text" id="schoolName" required   pattern ="[a-zA-Z]+" placeholder="" name="schoolName" className="form-control" value={formData.schoolName} onChange={handleInputChange} />
+                  </div>
+                </div>
+
+
                 <label htmlFor="fname" className="col-sm-2 col-form-label">
                   <span><strong>First Name:</strong></span>
                 </label>
