@@ -191,6 +191,36 @@ button {
 }
 
 
+select{
+  font-family: 'TTNorms', sans-serif;
+  background-color: #FFFFFF;
+  margin-bottom:10px;
+  border-radius:5px;
+  border-color: #0D190F;
+  border-width: 1px;
+}
+select[type=text]{
+  border-radius:5px;
+}
+select[value=text]{
+  border-radius:5px;
+}
+
+select:required {
+  border: 2px solid #6AA870;
+}
+select:required:invalid {
+  border: 2px solid #F2655A;
+}
+
+select:focus{
+  outline: 2px solid #293954;     /* oranges! yey */
+}
+
+
+
+
+
 
 /*     
 'salmon': '#F2655A',

@@ -5,4 +5,5 @@ export interface AppFormData {
   email: string;
   address: string;
   number: string;
+  state: string;
 }
