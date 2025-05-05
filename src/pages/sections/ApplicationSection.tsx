@@ -25,20 +25,20 @@ export default function ApplicationSection() {
         <div className="flex flex-col lg:flex-row gap-16 justify-between">
           <ApplicationCard
             imageUrl={img1}
-            link={"/DonationPage/app/"}
-            title="Student Application"
+            link={"/DonationPage/FundApplication/"}
+            title="Literacy Fund Application"
           
           >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua          </ApplicationCard>
           <ApplicationCard
             imageUrl={img2}
-            title="Reader Application"
-            link={"/DonationPage/app/"}
+            title="Library Grant Application"
+            link={"/DonationPage/GrantApplication/"}
           >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua          </ApplicationCard>
           <ApplicationCard
             imageUrl={img3}
-            title="Grant Application"
+            title="Reader Application"
             link={"/DonationPage/app/"}
           >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua          </ApplicationCard>

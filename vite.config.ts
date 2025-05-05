@@ -31,6 +31,8 @@ export default defineConfig({
         main: resolve(root, 'index.html'),
         about: resolve(root, 'about', 'index.html'),
         app: resolve(root, 'app', 'index.html'),
+        FundApplication: resolve(root, 'FundApplication', 'index.html'),
+        GrantApplication: resolve(root, 'GrantApplication', 'index.html'),
       
 
       }

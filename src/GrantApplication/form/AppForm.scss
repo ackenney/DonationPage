@@ -1,0 +1,254 @@
+.app-form {
+  width: 50%;
+  max-width: 50%;
+  height: 100vh;
+
+  float: left;
+}
+
+@font-face {
+  font-family: 'MyFont';
+  src: url('../../assets/fonts/MyFont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  color: #F2655A
+}
+
+@font-face {
+  font-family: 'TTNorms';
+  src: url('../../assets/fonts/TTNormsProRegular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Calluna';
+  src: url('../../assets/fonts/Calluna_Sans_Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+h1{
+
+  font-family: 'Calluna', sans-serif;
+  color: #F2655A
+}
+
+label{
+  font-family: 'TTNorms', sans-serif;
+  color: #0D190F;
+  padding-bottom: 50px;
+}
+
+body {
+  background-color: #FFFFF5;
+  margin-left: 25px;
+}
+
+input{
+  font-family: 'TTNorms', sans-serif;
+  background-color: #FFFFFF;
+  margin-bottom:10px;
+  border-radius:5px;
+  border-color: #0D190F;
+  border-width: 1px;
+}
+input[type=text]{
+  border-radius:5px;
+}
+input[value=text]{
+  border-radius:5px;
+}
+
+input:required {
+  border: 2px solid #6AA870;
+}
+input:required:invalid {
+  border: 2px solid #F2655A;
+}
+
+input:focus{
+  outline: 2px solid #293954;     /* oranges! yey */
+}
+
+/* button{
+  font-family: 'TTNorms', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  border-radius: 0.375rem;
+  font-size: 0.875rem; // text-sm
+  font-weight: 700; // font-bold
+  transition: all 0.2s ease-in-out;
+  pointer-events: auto;
+}
+ */
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  border-radius: 0.375rem;
+  font-size: 0.875rem; // text-sm
+  font-weight: 700; // font-bold
+  transition: all 0.2s ease-in-out;
+  pointer-events: auto;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: 'Calluna', sans-serif;
+  &:focus-visible {
+    outline: none;
+    
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  svg {
+    pointer-events: none;
+    flex-shrink: 0;
+  }
+
+  &--default {
+    background-color: #6AA870;
+    color: #FFFFF5;
+
+    &:hover {
+      background-color: rgba(#6AA870, 0.9);
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 2px #6AA870, 0 0 0 4px #FFFFF5;
+    }
+  }
+
+  &--secondary {
+    background-color: #FFFFF5;
+    color: #6AA870;
+
+    &:hover {
+      background-color: rgba(#FFFFF5, 0.9);
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 2px #FFFFF5, 0 0 0 4px #6AA870;
+    }
+  }
+
+  &--outline {
+    border: 1px solid #6AA870;
+    background-color: #FFFFF5;
+    color: #6AA870;
+
+    &:hover {
+      background-color: #f5f5f5; // neutral-100
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 2px #6AA870, 0 0 0 4px #FFFFF5;
+    }
+  }
+
+  &--ghost {
+    background-color: #FFFFF5;
+    color: #0D190F;
+
+    &:hover {
+      background-color: #f5f5f5; // neutral-100
+    }
+  }
+
+  // Sizes
+  &--default-size {
+    height: 2.5rem; // h-10
+    padding: 0.5rem 1rem;
+  }
+
+  &--sm {
+    height: 2.25rem;
+    border-radius: 0.375rem;
+    padding: 0 0.75rem;
+  }
+
+  &--lg {
+    height: 2.75rem;
+    border-radius: 0.375rem;
+    padding: 0 2rem;
+  }
+
+  &--icon {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+
+
+select{
+  font-family: 'TTNorms', sans-serif;
+  background-color: #FFFFFF;
+  margin-bottom:10px;
+  border-radius:5px;
+  border-color: #0D190F;
+  border-width: 1px;
+}
+select[type=text]{
+  border-radius:5px;
+}
+select[value=text]{
+  border-radius:5px;
+}
+
+select:required {
+  border: 2px solid #6AA870;
+}
+select:required:invalid {
+  border: 2px solid #F2655A;
+}
+
+select:focus{
+  outline: 2px solid #293954;     /* oranges! yey */
+}
+
+
+
+
+
+
+/*     
+'salmon': '#F2655A',
+'navy': '#293954',
+'nearGreen':'#6AA870',
+'lightBlue':'#88D2FF',
+'nearBlack':'#0D190F',
+'offWhite':'#FFFFF5',
+ */
+
+/* const buttonVariants = cva("inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0", {
+  variants: {
+    variant: {
+      default: "bg-nearGreen text-offWhite hover:bg-nearGreen/90 focus-visible:ring-nearGreen focus-visible:ring-offset-offWhite",
+      secondary: "bg-offWhite text-nearGreen hover:bg-offWhite/90 focus-visible:ring-offWhite focus-visible:ring-offset-nearGreen",
+      outline: "border border-nearGreen bg-offWhite text-nearGreen hover:bg-neutral-100 focus-visible:ring-nearGreen focus-visible:ring-offset-offWhite",
+      ghost: "bg-offWhite text-nearBlack hover:bg-neutral-100",
+    },
+    size: {
+      default: "h-10 px-4 py-2",
+      sm: "h-9 rounded-md px-3",
+      lg: "h-11 rounded-md px-8",
+      icon: "h-10 w-10",
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+    size: "default",
+  },
+});
+ */
