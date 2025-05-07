@@ -1,7 +1,7 @@
 import React, {useRef, /* useState */} from 'react';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
-import {validateAddress, validateNumber, validateDate, validateEmail, validateName} from "./AppFormValidation";
+import {validateAddress, validateNumber, validateEmail, validateName, validatePhone} from "./AppFormValidation";
 import {AppFormData} from "./AppFormData";
 import axios from "axios";
 import "./AppForm.scss";
@@ -44,15 +44,21 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
 
   const canPrintToPdf = (): boolean => {
     return (
-        validateName(formData.fname) &&
-        validateName(formData.lname) &&
-        validateDate(formData.date) &&
+        validateName(formData.studentfname) &&
+        validateName(formData.studentlname) &&
+        validateName(formData.parentfname) &&
+        validateName(formData.parentlname) &&
+      
         validateEmail(formData.email) &&
         validateAddress(formData.address) &&
-        validateNumber(formData.number)&&
+        validatePhone(formData.number)&&
         validateName(formData.state) &&
-        validateName(formData.schoolName) &&
-        validateAddress(formData.gradeLevel)
+        validateAddress(formData.schoolName) &&
+        validateAddress(formData.gradeLevel) &&
+        validateAddress(formData.city)&&
+        validateNumber(formData.zipCode)&&
+        validateName(formData.lunchQuestion) 
+        
       
     );
   };
@@ -64,22 +70,28 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
       }
 
       const doc = new jsPDF();
-      doc.text('Test Application Form', 10, 10);
+      doc.text('Parent/Child Interest form for The Literacy Fund', 10, 10);
       autoTable(doc, {
         startY: 20,
         body: [
           ['School Grade Level', formData.gradeLevel],
           ['School Name', formData.schoolName],
-          ['First Name', formData.fname],
-          ['Last Name', formData.lname],
-          ['Date', formData.date],
-          ['Email', formData.email],
-          ['Address', formData.address],
-          ['Number', formData.number],
+          ['Student First Name', formData.studentfname],
+          ['Student Last Name', formData.studentlname],
+          ['City', formData.city],
+          ['Street Address', formData.address],
           ['State', formData.state],
+          ['Zip Code', formData.zipCode],
+          ['Appartment Number', formData.aptNumber],
+          ['Parent/Guardian First Name', formData.parentfname],
+          ['Parent/Guardian Last Name', formData.parentlname],
+          ['Parent/Guardian Email', formData.email],
+          ['Parent/Guardian Phone Number', formData.number],
+          ['Is your child eligible for free or reduced lunch at their school? (verification required upon selection)', formData.lunchQuestion],
+      
         ],
       });
-      doc.save('docForm (' + formData.fname +'_'+ formData.lname+ ").pdf");
+      doc.save('docForm (' + formData.studentfname +'_'+ formData.studentlname+ ").pdf");
     }
   };
   const generatePDF =()=>{
@@ -95,16 +107,21 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
         body: [
           ['School Grade Level', formData.gradeLevel],
           ['School Name', formData.schoolName],
-          ['First Name', formData.fname],
-          ['Last Name', formData.lname],
-          ['Date', formData.date],
-          ['Email', formData.email],
-          ['Address', formData.address],
-          ['Number', formData.number],
+          ['Student First Name', formData.studentfname],
+          ['Student Last Name', formData.studentlname],
+          ['City', formData.city],
+          ['Street Address', formData.address],
           ['State', formData.state],
+          ['Zip Code', formData.zipCode],
+          ['Appartment Number', formData.aptNumber],
+          ['Parent/Guardian First Name', formData.parentfname],
+          ['Parent/Guardian Last Name', formData.parentlname],
+          ['Parent/Guardian Email', formData.email],
+          ['Parent/Guardian Phone Number', formData.number],
+          ['Is your child eligible for free or reduced lunch at their school? (verification required upon selection)', formData.lunchQuestion],
         ],
       });
-      doc.save('docForm (' + formData.fname +'_'+ formData.lname + ").pdf");
+      doc.save('docForm (' + formData.studentfname +'_'+ formData.studentlname + ").pdf");
       return doc;
     }
   };
@@ -148,16 +165,16 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                 },
                 to: [
                     {
-                        name: formData.fname +' '+ formData.lname,
+                        name: formData.studentfname +' '+ formData.studentlname,
                         email: formData.email,
                     },
                 ],
-                subject: formData.fname +' '+ formData.lname + ' Application type',
+                subject: formData.studentfname +' '+ formData.studentlname + ' Application type',
                 htmlContent: 'Thank you for applying!',
                 attachment: [
                     {
                         content: base64Pdf,
-                        name: 'docForm (' + formData.fname +'_'+ formData.lname + ").pdf",
+                        name: 'docForm (' + formData.studentfname +'_'+ formData.studentlname + ").pdf",
                     },
                 ],
             },
@@ -190,7 +207,7 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                   
                 </div>
                 <div className="d-flex justify-content-between align-items-center">
-                  <h1> Literacy Fund Application</h1>
+                  <h1> Parent/Child Interest form for The Literacy Fund</h1>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
                 
@@ -220,7 +237,7 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                 </div>
 
 
-                <label htmlFor="fname" className="col-sm-2 col-form-label">
+                <label htmlFor="schoolName" className="col-sm-2 col-form-label">
                   <span><strong>School Name:</strong></span>
                 </label>
                 <div className="form-group row">
@@ -230,38 +247,36 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                 </div>
 
 
-                <label htmlFor="fname" className="col-sm-2 col-form-label">
-                  <span><strong>First Name:</strong></span>
+                <label htmlFor="studentfname" className="col-sm-2 col-form-label">
+                  <span><strong>Student First Name:</strong></span>
                 </label>
                 <div className="form-group row">
                   <div className="col-sm-10">
-                    <input type="text" id="fname" required   pattern ="[a-zA-Z]+" placeholder="John" name="fname" className="form-control" value={formData.fname} onChange={handleInputChange} />
+                    <input type="text" id="studentfname" required   pattern ="[a-zA-Z]+" placeholder="John" name="studentfname" className="form-control" value={formData.studentfname} onChange={handleInputChange} />
                   </div>
                 </div>
                 
-                <label htmlFor="lname" className="col-sm-2 col-form-label">
-                  <span><strong>Last Name:</strong></span>
+                <label htmlFor="studentlname" className="col-sm-2 col-form-label">
+                  <span><strong>Student Last Name:</strong></span>
                 </label>
                 <div className="form-group row">
                   <div className="col-sm-10">
-                    <input type="text" id="lname" required  pattern ="[a-zA-Z]+" placeholder="Doe" name="lname" className="form-control" value={formData.lname} onChange={handleInputChange} />
+                    <input type="text" id="studentlname" required  pattern ="[a-zA-Z]+" placeholder="Doe" name="studentlname" className="form-control" value={formData.studentlname} onChange={handleInputChange} />
                   </div>
                 </div>
 
-
-                <label htmlFor="date"  className="col-sm-2 col-form-label"><strong>Date:</strong></label>
+                <label htmlFor="address" className="col-sm-2 col-form-label"><strong>Street Address:</strong></label>
                 <div className="form-group row">
                   <div className="col-sm-10">
-                    <input type="date" required id="date" name="date" className="form-control" value={formData.date} onChange={handleInputChange} />
+                    <input type="text" required id="address" name="address" className="form-control" value={formData.address} onChange={handleInputChange} />
                   </div>
                 </div>
-                <label htmlFor="email" className="col-sm-2 col-form-label"><strong>Email:</strong></label>
+                <label htmlFor="city" className="col-sm-2 col-form-label"><strong>City:</strong></label>
                 <div className="form-group row">
                   <div className="col-sm-10">
-                    <input type="email" id="email" required  name="email" className="form-control" value={formData.email} onChange={handleInputChange} />
+                    <input type="text" required id="address" name="city" className="form-control" value={formData.city} onChange={handleInputChange} />
                   </div>
                 </div>
-
 
                 <label htmlFor="state" className="col-sm-2 col-form-label"><strong>State:</strong></label>
                 <div className="form-group row">
@@ -331,18 +346,82 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                 </div>
 
 
-                <label htmlFor="address" className="col-sm-2 col-form-label"><strong>Address:</strong></label>
+                <label htmlFor="zipCode" className="col-sm-4 col-form-label"><strong>Zip Code:</strong></label>
                 <div className="form-group row">
                   <div className="col-sm-10">
-                    <input type="text" required id="address" name="address" className="form-control" value={formData.address} onChange={handleInputChange} />
+                    <input type="tel" required id="zipCode" name="zipCode" placeholder="#####" pattern='[0-9]{5}'className="form-control"  value={formData.zipCode} onChange={handleInputChange} />
                   </div>
                 </div>
-                <label htmlFor="number" className="col-sm-4 col-form-label"><strong>Phone Number:</strong></label>
+
+                <label htmlFor="aptNumber" className="col-sm-2 col-form-label"><strong>Apartment Number:</strong></label>
+                <div className="form-group row">
+                  <div className="col-sm-10">
+                    <input type="text" id="address" name="aptNumber" className="form-control" value={formData.aptNumber} onChange={handleInputChange} />
+                  </div>
+                </div>
+
+
+                <label htmlFor="parentfname" className="col-sm-2 col-form-label">
+                  <span><strong>Parent/Guardian First Name:</strong></span>
+                </label>
+                <div className="form-group row">
+                  <div className="col-sm-10">
+                    <input type="text" id="parentfname" required   pattern ="[a-zA-Z]+" placeholder="John" name="parentfname" className="form-control" value={formData.parentfname} onChange={handleInputChange} />
+                  </div>
+                </div>
+                
+                <label htmlFor="parentlname" className="col-sm-2 col-form-label">
+                  <span><strong>Parent/Guardian Last Name:</strong></span>
+                </label>
+                <div className="form-group row">
+                  <div className="col-sm-10">
+                    <input type="text" id="parentlname" required  pattern ="[a-zA-Z]+" placeholder="Doe" name="parentlname" className="form-control" value={formData.parentlname} onChange={handleInputChange} />
+                  </div>
+                </div>
+              
+                <label htmlFor="email" className="col-sm-2 col-form-label"><strong>Parent/Guardian Personal Email:</strong></label>
+                <div className="form-group row">
+                  <div className="col-sm-10">
+                    <input type="email" id="email" required  name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" className="form-control" value={formData.email} onChange={handleInputChange} />
+                  </div>
+                </div>
+
+
+              
+
+              
+                <label htmlFor="number" className="col-sm-4 col-form-label"><strong>Parent/Guardian Phone Number:</strong></label>
                 <div className="form-group row">
                   <div className="col-sm-10">
                     <input type="tel" required id="number" name="number" placeholder="### - ### - ####" pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'className="form-control"  value={formData.number} onChange={handleInputChange} />
                   
-                    <div className="mt-4  grid-cols-1 justify-content-right">
+                  
+                  </div>
+                </div>
+
+                <label htmlFor="lunchQuestion" className="col-sm-2 col-form-label"><strong>Is your child eligible for free or reduced lunch at their school? (verification required upon selection)</strong></label>
+                <div className="form-group row">
+                  <div className="col-sm-10">
+                    <select
+                      id="lunchQuestion"
+                      name="lunchQuestion"
+                      className="form-control"
+                      required
+                      value={formData.lunchQuestion}
+                      
+                      onChange={handleInputChange}
+                    >
+                      <option value="">Select an Answer</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                      <option value="Not Sure">Not Sure</option>
+                    </select>
+                  </div>
+                </div>
+
+
+
+                <div className="mt-4  grid-cols-1 justify-content-right">
                       <button
                           type="button"
                           className={`btn btn-lg ${!canPrintToPdf() ? 'btn-secondary' : 'btn-success'}`}
@@ -356,14 +435,9 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                         disabled={!canPrintToPdf()}>
                         Submit
                         </button>
-                      
-                    
                 
-
                       
                     </div>
-                  </div>
-                </div>
               </form>
             </div>
           </div>

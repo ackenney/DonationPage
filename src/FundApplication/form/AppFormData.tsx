@@ -1,6 +1,8 @@
 export interface AppFormData {
-  fname: string;
-  lname: string;
+  studentfname: string;
+  studentlname: string;
+  parentfname: string;
+  parentlname: string;
   schoolName: string;
   date: string;
   email: string;
@@ -8,4 +10,8 @@ export interface AppFormData {
   number: string;
   state: string;
   gradeLevel: string;
+  aptNumber: string;
+  city: string;
+  zipCode: string;
+  lunchQuestion: string;
 }
