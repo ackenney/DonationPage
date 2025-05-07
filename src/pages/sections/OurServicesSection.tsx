@@ -16,7 +16,7 @@ export default function OurServicesSection() {
         </div>
         <div className="flex flex-col lg:flex-col lg:justify-between gap-y-16 lg:gap-x-6">
           <OurServicesCard
-            title="Library Fund"
+            title="Literacy Fund"
             icon={<LibraryBig size={36} className="text-offWhite" />}
           >
           The Literacy Fund, which will collaborate with parents to match their child to a private certified reading specialist outside of school. Reading specialists are able to provide learning disability assessments if needed and to tailor one-on-one literacy instruction to children’s needs. Maroon Strategy will cover the costs to see reading specialists, as well as schedule and pay for transportation to and from these appointments.          </OurServicesCard>
