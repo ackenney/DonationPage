@@ -1,4 +1,4 @@
-import {BookCheck,Glasses, LibraryBig} from "lucide-react";
+import {BookCheck,Glasses, Sun} from "lucide-react";
 import { Section } from "../../components/layouts/Section";
 import { OurServicesCard } from "../../components/OurServicesCard";
 
@@ -17,12 +17,12 @@ export default function OurServicesSection() {
         <div className="flex flex-col lg:flex-col lg:justify-between gap-y-16 lg:gap-x-6">
           <OurServicesCard
             title="Literacy Fund"
-            icon={<LibraryBig size={36} className="text-offWhite" />}
+            icon={<Glasses size={36} className="text-offWhite" />}
           >
           The Literacy Fund, which will collaborate with parents to match their child to a private certified reading specialist outside of school. Reading specialists are able to provide learning disability assessments if needed and to tailor one-on-one literacy instruction to children’s needs. Maroon Strategy will cover the costs to see reading specialists, as well as schedule and pay for transportation to and from these appointments.          </OurServicesCard>
           <OurServicesCard
             title="Summer Program"
-            icon={<Glasses size={36} className="text-offWhite" />}
+            icon={<Sun size={36} className="text-offWhite" />}
           >
            Maroon Studio will begin during the summer of 2026, and operate for fifteen days, serving young people in grades 3rd-6th. We will offer high quality summer enrichment with experienced educators and teaching artists who focus on literacy as well as culturally significant modes of learning such as arts instruction.           </OurServicesCard>
           <OurServicesCard
