@@ -57,6 +57,9 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
         validateAddress(formData.gradeLevel) &&
         validateAddress(formData.city)&&
         validateNumber(formData.zipCode)&&
+        validateAddress(formData.fundQuestion) &&
+        validateName(formData.tutoringQuestion) &&
+        validateName(formData.transportQuestion) &&
         validateName(formData.lunchQuestion) 
         
       
@@ -88,6 +91,8 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
           ['Parent/Guardian Email', formData.email],
           ['Parent/Guardian Phone Number', formData.number],
           ['Is your child eligible for free or reduced lunch at their school? (verification required upon selection)', formData.lunchQuestion],
+          ['What led you to pursue services through The Literacy Fund?', formData.fundQuestion],
+          ['Do you have access to reliable transportation outside of SEPTA?', formData.transportQuestion],
       
         ],
       });
@@ -119,6 +124,9 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
           ['Parent/Guardian Email', formData.email],
           ['Parent/Guardian Phone Number', formData.number],
           ['Is your child eligible for free or reduced lunch at their school? (verification required upon selection)', formData.lunchQuestion],
+          ['What led you to pursue services through The Literacy Fund?', formData.fundQuestion],
+          ['Have you been able to pursue other tutoring or reading specialist services for your child?', formData.tutoringQuestion],
+          ['Do you have access to reliable transportation outside of SEPTA?', formData.transportQuestion],
         ],
       });
       doc.save('docForm (' + formData.studentfname +'_'+ formData.studentlname + ").pdf");
@@ -169,7 +177,7 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                         email: formData.email,
                     },
                 ],
-                subject: formData.studentfname +' '+ formData.studentlname + ' Application type',
+                subject: formData.studentfname +' '+ formData.studentlname + 'Literacy Fund Application',
                 htmlContent: 'Thank you for applying!',
                 attachment: [
                     {
@@ -242,7 +250,7 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                 </label>
                 <div className="form-group row">
                   <div className="col-sm-10">
-                    <input type="text" id="schoolName" required   pattern ="[a-zA-Z]+" placeholder="" name="schoolName" className="form-control" value={formData.schoolName} onChange={handleInputChange} />
+                    <input type="text" id="schoolName" required  placeholder="" name="schoolName" className="form-control" value={formData.schoolName} onChange={handleInputChange} />
                   </div>
                 </div>
 
@@ -419,7 +427,55 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                   </div>
                 </div>
 
+                <label htmlFor="fundQuestion" className="col-sm-2 col-form-label"><strong>What led you to pursue services through The Literacy Fund?</strong></label>
+                <div className="form-group row">
+                  <div className="col-sm-10">
+                    <input type="text" required id="fundQuestion" name="fundQuestion" className="form-control" value={formData.fundQuestion} onChange={handleInputChange} />
+                  </div>
+                </div>
 
+
+                <label htmlFor="tutoringQuestion" className="col-sm-2 col-form-label"><strong>Have you been able to pursue other tutoring or reading specialist services for your child?</strong></label>
+                <div className="form-group row">
+                  <div className="col-sm-10">
+                    <select
+                      id="tutoringQuestion"
+                      name="tutoringQuestion"
+                      className="form-control"
+                      required
+                      value={formData.tutoringQuestion}
+                      
+                      onChange={handleInputChange}
+                    >
+                      <option value="">Select an Answer</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                      <option value="Not Sure">Not Sure Yet</option>
+                    </select>
+                  </div>
+                </div>
+
+
+
+                <label htmlFor="transportQuestion" className="col-sm-2 col-form-label"><strong>Do you have access to reliable transportation outside of SEPTA?</strong></label>
+                <div className="form-group row">
+                  <div className="col-sm-10">
+                    <select
+                      id="transportQuestion"
+                      name="transportQuestion"
+                      className="form-control"
+                      required
+                      value={formData.transportQuestion}
+                      
+                      onChange={handleInputChange}
+                    >
+                      <option value="">Select an Answer</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                      <option value="Not Sure">Not Sure Yet</option>
+                    </select>
+                  </div>
+                </div>
 
                 <div className="mt-4  grid-cols-1 justify-content-right">
                       <button

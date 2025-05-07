@@ -14,4 +14,7 @@ export interface AppFormData {
   city: string;
   zipCode: string;
   lunchQuestion: string;
+  fundQuestion: string;
+  tutoringQuestion: string;
+  transportQuestion: string;
 }

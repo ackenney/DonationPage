@@ -19,7 +19,10 @@ const App: React.FC = () => {
     gradeLevel:'',
     city:'',
     zipCode:'',
-    lunchQuestion:''
+    lunchQuestion:'',
+    fundQuestion: '',
+    tutoringQuestion: '',
+    transportQuestion:''
   });
 
   return (
