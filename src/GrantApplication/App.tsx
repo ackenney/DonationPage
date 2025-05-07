@@ -5,13 +5,21 @@ import AppForm from "./form/AppForm";
 
 const App: React.FC = () => {
   const [formData, setFormData] = useState<AppFormData>({
-    fname: '',
-    lname: '',
+    studentfname: '',
+    studentlname: '',
+    parentfname: '',
+    parentlname: '',
     date: '',
     email: '',
     address: '',
     number: '',
-    state:''
+    state:'',
+    aptNumber:'',
+    schoolName:'',
+    gradeLevel:'',
+    city:'',
+    zipCode:'',
+    lunchQuestion:''
   });
 
   return (
