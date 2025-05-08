@@ -10,7 +10,7 @@ interface ApplicationCardProps {
 }
 
 export const ApplicationCard = ({
-  children,
+/*   children, */
   link,
 /*   imageUrl, */
 
@@ -25,9 +25,9 @@ export const ApplicationCard = ({
         <span className="text-lg font-bold">
           {title}
         </span>
-        <p className="text-sm  leading-6">
+    {/*     <p className="text-sm  leading-6">
           {children}
-        </p>
+        </p> */}
       </div>
       <div className="flex flex-col">
       
