@@ -5,7 +5,7 @@ import {validateAddress, validateNumber, validateEmail, validateName, validatePh
 import {AppFormData} from "./AppFormData";
 import axios from "axios";
 import "./AppForm.scss";
-
+import img1 from ".//../..//../public/images/MS_Logo_Horizontal_LightBlue.png"
 
 const part5 = 'nIFHX3K';
 const part3 = 'ed879e22efc0d33baa0ccad2f9a';
@@ -207,6 +207,11 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                   
                 </div>
                 <div className="d-flex justify-content-between align-items-center">
+                <img 
+          className="lg:rounded-3xl w-full"
+          src={img1} alt="img"
+          width="50%" height="50%"
+        />
                   <h1>Parent/Child Interest form for The Library Cut Grant</h1>
 {/*                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
  */}                </div>

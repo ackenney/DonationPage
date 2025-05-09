@@ -2,10 +2,10 @@ import { Section } from "../../components/layouts/Section";
 import { ApplicationCard } from "../../components/ApplicationCard";
 
 
-import img1 from "../../../public//images/vector-student-glyph-black-icon-1680392795.jpg"
-import img2 from "../../../public//images/teacher-icon-design-free-vector-2580301237.jpg"
-import img3 from "../../../public//images/th-2951852438.jpg"
-import img4 from "../../../public/images/Document-3757720690.png"
+import img1 from '../../../public/images/philadelphia-skyline-1219756.jpg';
+import img2 from '../../../public/images/philadelphia-skyline-1219756.jpg';
+import img3 from '../../../public/images/philadelphia-skyline-1219756.jpg';
+import img4 from '../../../public/images/philadelphia-skyline-1219756.jpg';
 import skylineImage from '../../../public/images/philadelphia-skyline-1219756.jpg';
 
 

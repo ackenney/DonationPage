@@ -6,7 +6,7 @@ import {AppFormData} from "./AppFormData";
 import axios from "axios";
 import "./AppForm.scss";
 
-
+import img1 from ".//../..//../public/images/MS_Logo_Horizontal_LightBlue.png"
 const part5 = 'nIFHX3K';
 const part3 = 'ed879e22efc0d33baa0ccad2f9a';
 const part1 = 'xkeysib-01c8a3ea';
@@ -212,7 +212,11 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
             <div className="col-md-6">
               <form onSubmit={submitForm} ref={formRef} className="mt-5">
                 <div className="d-flex justify-content-between align-items-center">
-                  
+                <img 
+          className="lg:rounded-3xl w-full"
+          src={img1} alt="img"
+          width="50%" height="50%"
+        />
                 </div>
                 <div className="d-flex justify-content-between align-items-center">
                   <h1> Parent/Child Interest form for The Literacy Fund</h1>
