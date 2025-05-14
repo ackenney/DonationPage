@@ -25,7 +25,7 @@ export default function ApplicationSection() {
         <div className="flex flex-col lg:flex-row gap-16 justify-between">
           <ApplicationCard
             imageUrl={img1}
-            link={"/DonationPage/FundApplication/"}
+            link={"/FundApplication/"}
             title="Literacy Fund Application"
           
           >
@@ -33,19 +33,19 @@ export default function ApplicationSection() {
           <ApplicationCard
             imageUrl={img2}
             title="Library Grant Application"
-            link={"/DonationPage/GrantApplication/"}
+            link={"/GrantApplication/"}
           >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua          </ApplicationCard>
           <ApplicationCard
             imageUrl={img3}
             title="Reader Job Application"
-            link={"/DonationPage/app/"}
+            link={"/app/"}
           >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua          </ApplicationCard>
           <ApplicationCard
             imageUrl={img4}
             title="Summer Program Application"
-            link={"/DonationPage/app/"}
+            link={"/app/"}
           >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua          </ApplicationCard>
         
