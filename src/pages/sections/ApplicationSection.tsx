@@ -13,7 +13,7 @@ export default function ApplicationSection() {
   return (
     <Section id="application" className="bg-nearGreen">
       <div className="w-full lg:max-w-7xl lg:mx-auto bg-cover bg-no-repeat bg-top bg-fixed" style={{ backgroundImage: `url(${skylineImage})` }}>
-      <div className="flex flex-col gap-16 items-center p-8 lg:py-20 backdrop-grayscale bg-gradient-to-r from-nearGreen via-nearGreen/50 via-50% to-nearGreen">
+      <div className="flex flex-col gap-16 items-center p-4 lg:py-16 backdrop-grayscale bg-gradient-to-r from-nearGreen via-nearGreen/50 via-50% to-nearGreen">
         <div className="flex flex-col text-center">
           <span className="text-xs lg:text-sm text-navy tracking-widest">
             APPLICATIONS
@@ -22,29 +22,30 @@ export default function ApplicationSection() {
             Get Involved
           </h2>
         </div>
-        <div className="flex flex-col lg:flex-row gap-16 justify-between">
+        <div className="flex flex-col lg:flex-row  gap-16 ">
           <ApplicationCard
             imageUrl={img1}
             link={"/FundApplication/"}
-            title="Literacy Fund Application"
-          
+            title="Literacy Fund Application&emsp;&emsp;&emsp;&emsp; &emsp; "
           >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua          </ApplicationCard>
           <ApplicationCard
             imageUrl={img2}
-            title="Library Grant Application"
+            title="The Library Grant Application &emsp;&emsp;&emsp;&emsp; &emsp;"
             link={"/GrantApplication/"}
+            
           >
+            
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua          </ApplicationCard>
           <ApplicationCard
             imageUrl={img3}
-            title="Reader Job Application"
+            title="Careers&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;&emsp;&emsp;&emsp; &emsp;&emsp; &emsp;&emsp;&emsp; &emsp;"
             link={"/app/"}
           >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua          </ApplicationCard>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua       </ApplicationCard>
           <ApplicationCard
             imageUrl={img4}
-            title="Summer Program Application"
+            title="Maroon Studio Summer Program Application"
             link={"/app/"}
           >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua          </ApplicationCard>

@@ -220,8 +220,8 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                 </div>
                 <div className="d-flex justify-content-between align-items-center">
                   <h1> Parent/Child Interest form for The Literacy Fund</h1>
-{/*                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
- */}                </div>
+{                   <p>The Literacy Fund, which will collaborate with parents to match their child to a private certified reading specialist outside of school. Reading specialists are able to provide learning disability assessments if needed and to tailor one-on-one literacy instruction to children’s needs. Maroon Strategy will cover the costs to see reading specialists, as well as schedule and pay for transportation to and from these appointments. </p>
+ }                </div>
                 
 
                 <label htmlFor="gradeLevel" className="col-sm-2 col-form-label"><strong>Student Grade Level:</strong></label>
@@ -237,18 +237,12 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                       onChange={handleInputChange}
                     >
                       <option value="">Select a Grade Level</option>
-                      <option value="1st Grade">1st Grade</option>
-                      <option value="2nd Grade">2nd Grade</option>
+                      
                       <option value="3rd Grade">3rd Grade</option>
                       <option value="4th Grade">4th Grade</option>
                       <option value="5th Grade">5th Grade</option>
                       <option value="6th Grade">6th Grade</option>
-                      <option value="7th Grade">7th Grade</option>
-                      <option value="8th Grade">8th Grade</option>
-                      <option value="9th Grade">9th Grade</option>
-                      <option value="10th Grade">10th Grade</option>
-                      <option value="11th Grade">11th Grade</option>
-                      <option value="12th Grade">12th Grade</option>
+                  
                     </select>
                   </div>
                 </div>

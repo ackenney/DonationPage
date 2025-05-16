@@ -1,15 +1,15 @@
 import { Section } from "../../components/layouts/Section";
 
-/* import img from "../../../public/images/rdne-6646981.jpg"
- */
+ import img from "../../../public/images/2.png"
+ 
 export default function AboutUsSection() {
   return (
     <Section id="about-us" className="bg-offWhite">
-      <div className="w-full lg:max-w-7xl lg:mx-auto flex flex-col items-center gap-20 p-8 lg:py-28">
-      {/*   <img
+      <div className="w-full lg:max-w-7xl lg:mx-auto grid lg:grid-cols-2 gap-8 p-8 lg:py-28">
+              {   <img
           className="rounded-3xl w-full"
-          src={img} alt="img2" />  */}
-        <div className="flex flex-col  items-center">
+          src={img} alt="img2" /> }
+      <div className="flex flex-col items-start">
           <span className="text-xs lg:text-sm text-navy tracking-widest">ABOUT US</span>
           <h2 className="text-3xl lg:text-5xl text-salmon font-bold">Maroon Strategy</h2>
           <p className="py-4 leading-loose text-nearBlack lg:leading-9">

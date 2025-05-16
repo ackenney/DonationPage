@@ -17,11 +17,11 @@ export const ApplicationCard = ({
   title,
 }: ApplicationCardProps) => {
   return (
-    <div className="flex flex-col gap-4 bg-offWhite p-4 rounded-xl w-full max-w-96">
+    <div className="flex flex-col gap-5 bg-offWhite p-4 rounded-xl w-full max-w-96">
     {/*   <div className="rounded-xl h-56 w-full overflow-hidden">
         <img src={imageUrl} className="h-full w-full object-cover" />
       </div> */}
-      <div className="flex flex-col  text-nearBlack gap-1">
+      <div className="flex flex-row  text-nearBlack gap-96">
         <span className="text-lg font-bold">
           {title}
         </span>
@@ -29,15 +29,17 @@ export const ApplicationCard = ({
           {children}
         </p> */}
       </div>
-      <div className="flex flex-col">
-      
-      </div>
-      <Button className="font-bold" size="sm">
+    
+    {   <div className="flex flex-col gap-16">
+        <Button className="font-bold" size="sm">
         <Pen className="size-4" />
         <a href={link}>
           Apply Now
         </a>
         </Button>
+      </div> }
+      
+    
 
 
     {/*   <Button className="text-md font-bold" size="lg">

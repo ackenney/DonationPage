@@ -5,8 +5,8 @@ import {MenuIcon, X } from "lucide-react";
 import { Button } from "../Button";
 import { Menu, MobileMenu } from "./navigation/Menu";
 
-/* import img1 from ".//../..//../public/images/MS_Logo_Horizontal_Salmon.png"
- */
+ import img1 from ".//../..//../public/images/MS_Logo_Horizontal_Salmon.png"
+ 
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +19,11 @@ export const Header = () => {
             {/* <a href="#home" className="text-xl text-nearBlack lg:text-2xl font-bold">
             Maroon Strategy
             </a> */}
+                <img 
+          className="lg:rounded-1xl w-40"
+          src={img1} alt="img"
+          width="10%" height="10%"
+        />
             <Button
               onClick={() => setIsOpen(!isOpen)}
               size="icon"
