@@ -22,7 +22,7 @@ export default defineConfig({
     __API_KEY__: JSON.stringify(apiKey),
     __FROM_EMAIL__: JSON.stringify(fromEmail),
 },
-  base: "/DonationPage",
+  base: "/",
   build:{
     outDir,
     emptyOutDir: true,
