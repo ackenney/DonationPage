@@ -40,13 +40,13 @@ export default function ApplicationSection() {
           <ApplicationCard
             imageUrl={img3}
             title="Careers&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;&emsp;&emsp;&emsp; &emsp;&emsp; &emsp;&emsp;&emsp; &emsp;"
-            link={"/app/"}
+            link={""}
           >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua       </ApplicationCard>
           <ApplicationCard
             imageUrl={img4}
             title="Maroon Studio Summer Program Application"
-            link={"/app/"}
+            link={""}
           >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua          </ApplicationCard>
         

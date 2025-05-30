@@ -45,7 +45,7 @@ export const Header = () => {
               
               <Button className="text-md font-bold">
   
-                <a href="https://www.gofundme.com/">
+                <a href="https://cash.app/$MaroonStrategy/">
                 Donate Now 
                 </a>
                 </Button>
