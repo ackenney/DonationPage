@@ -92,7 +92,7 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
       
         ],
       });
-      doc.save('docForm (' + formData.studentfname +'_'+ formData.studentlname+ ").pdf");
+      doc.save(formData.studentfname +'_'+ formData.studentlname+ "_GrantApplication.pdf");
     }
   };
   const generatePDF =()=>{
@@ -102,7 +102,7 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
       }
 
       const doc = new jsPDF();
-      doc.text('Test Application Form', 10, 10);
+      doc.text('Library Grant Application', 10, 10);
       autoTable(doc, {
         startY: 20,
         body: [
@@ -122,7 +122,7 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
           ['Is your child eligible for free or reduced lunch at their school? (verification required upon selection)', formData.lunchQuestion],
         ],
       });
-      doc.save('docForm (' + formData.studentfname +'_'+ formData.studentlname + ").pdf");
+      doc.save(formData.studentfname +'_'+ formData.studentlname + "_GrantApplicaton.pdf");
       return doc;
     }
   };

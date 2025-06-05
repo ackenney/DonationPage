@@ -106,7 +106,7 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
       }
 
       const doc = new jsPDF();
-      doc.text('Test Application Form', 10, 10);
+      doc.text('Literacy Fund Application', 10, 10);
       autoTable(doc, {
         startY: 20,
         body: [
@@ -129,7 +129,7 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
           ['Do you have access to reliable transportation outside of SEPTA?', formData.transportQuestion],
         ],
       });
-      doc.save('docForm (' + formData.studentfname +'_'+ formData.studentlname + ").pdf");
+      doc.save(formData.studentfname +'_'+ formData.studentlname + "_FundApplication.pdf");
       return doc;
     }
   };
@@ -174,7 +174,7 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                 attachment: [
                     {
                         content: base64Pdf,
-                        name: 'docForm (' + formData.studentfname +'_'+ formData.studentlname + ").pdf",
+                        name: formData.studentfname +'_'+ formData.studentlname + "_FundApplication.pdf",
                     },
                 ],
             },
