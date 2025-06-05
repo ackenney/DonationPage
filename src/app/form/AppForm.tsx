@@ -7,12 +7,11 @@ import axios from "axios";
 import "./AppForm.scss";
 
 
-const part5 = 'nIFHX3K';
-const part3 = 'ed879e22efc0d33baa0ccad2f9a';
-const part1 = 'xkeysib-01c8a3ea';
-const part2 = '55565d9545f23464a340b27';
-const part4 = '8ee2f4-V9AYTsn41';
-
+const part5 = '2b14-H9p2nX8IPP7U0yqQ'
+const part3 = '24b6f3f0f700c15e4'
+const part1 = 'xkeysib-d16193264'
+const part2 ='5d16bcc66990eff06'
+const part4 = '6c8f968e182654708'
 
 
 export interface AppFormProps {
@@ -129,15 +128,7 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
             {
                 sender: {
                     name: 'Maroon Strategy',
-                    email: 'ackenney22@ackenney.com',
-                    "ips": [
-                      {
-                        "ip": "185.199.108.153",
-                        "domain": "ackenney.com",
-                      "weight": 50
-                          
-                      }
-                 ],
+                    email: 'destiny@maroonstrategy.org',
                 },
                 to: [
                     {
