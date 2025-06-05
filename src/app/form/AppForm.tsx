@@ -160,6 +160,7 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
         alert('Application Sent Successfully!');
     } catch (error) {
         console.error('Error sending email:', error);
+          alert('Application failed to Send. Try disabling Ad Block.');
     }
 };
 
