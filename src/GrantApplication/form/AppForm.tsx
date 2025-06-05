@@ -162,7 +162,7 @@ const sendEmailWithAttachment = async (pdfDoc: PdfDoc): Promise<void> => {
                         email: formData.email,
                     },
                 ],
-                subject: formData.studentfname +' '+ formData.studentlname + ' '+ 'Library Cut Grant Application',
+                subject: formData.studentfname +' '+ formData.studentlname + ' Library Cut Grant Application',
                 htmlContent: 'Thank you for applying!',
                 attachment: [
                     {
