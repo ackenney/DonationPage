@@ -96,7 +96,7 @@ export const AppForm: React.FC<AppFormProps> = (props) => {
       
         ],
       });
-      doc.save('docForm (' + formData.studentfname +'_'+ formData.studentlname+ ").pdf");
+      doc.save(formData.studentfname +'_'+ formData.studentlname+'_FundApplication'+ ".pdf");
     }
   };
   const generatePDF =()=>{
