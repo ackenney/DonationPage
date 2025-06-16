@@ -30,24 +30,22 @@ export const ApplicationCard = ({
         </p> */}
       </div>
     
-    {   <div className="flex flex-col gap-16">
+    
+    
+    
+  <ul className="space-y-4 mb-1 flex-grow">
+                
+                </ul>
+       <div className="flex flex-col gap-16">
         <Button className="font-bold" size="sm">
         <Pen className="size-4" />
         <a href={link}>
           Apply Now
         </a>
         </Button>
-      </div> }
+      </div> 
       
     
-
-
-    {/*   <Button className="text-md font-bold" size="lg">
-      
-      <a href="https://www.gofundme.com/">
-          Donate Now
-      </a>
-    </Button> */}
 
 
     </div>

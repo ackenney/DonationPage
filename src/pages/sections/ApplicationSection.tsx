@@ -12,7 +12,7 @@ import skylineImage from '../../../public/images/philadelphia-skyline-1219756.jp
 export default function ApplicationSection() {
   return (
     <Section id="application" className="bg-nearGreen">
-      <div className="w-full lg:max-w-7xl lg:mx-auto bg-cover bg-no-repeat bg-top bg-fixed" style={{ backgroundImage: `url(${skylineImage})` }}>
+      <div className="w-full lg:max-w-8xl lg:mx-auto bg-cover bg-no-repeat bg-top bg-fixed" style={{ backgroundImage: `url(${skylineImage})` }}>
       <div className="flex flex-col gap-16 items-center p-4 lg:py-16 backdrop-grayscale bg-gradient-to-r from-nearGreen via-nearGreen/50 via-50% to-nearGreen">
         <div className="flex flex-col text-center">
           <span className="text-xs lg:text-sm text-navy tracking-widest">
@@ -26,12 +26,12 @@ export default function ApplicationSection() {
           <ApplicationCard
             imageUrl={img1}
             link={"/FundApplication/"}
-            title="Literacy Fund Application&emsp;&emsp;&emsp;&emsp; &emsp; "
+            title="The Literacy Fund Application"
           >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua          </ApplicationCard>
           <ApplicationCard
             imageUrl={img2}
-            title="The Library Grant Application &emsp;&emsp;&emsp;&emsp; &emsp;"
+            title="The Library Grant Application"
             link={"/GrantApplication/"}
             
           >
@@ -39,7 +39,7 @@ export default function ApplicationSection() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua          </ApplicationCard>
           <ApplicationCard
             imageUrl={img3}
-            title="Careers&emsp;&emsp;&emsp;&emsp; &emsp; &emsp;&emsp;&emsp;&emsp; &emsp;&emsp; &emsp;&emsp;&emsp; &emsp;"
+            title="Maroon Strategy Career Applications"
             link={""}
           >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua       </ApplicationCard>
