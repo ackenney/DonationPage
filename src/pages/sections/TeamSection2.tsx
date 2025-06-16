@@ -40,7 +40,7 @@ export default function TeamSection() {
   return (
     <section className="md:px-16 bg-nearGreen" id="team2">
             <div className="w-full full lg:max-w-7xl lg:mx-auto bg-cover bg-no-repeat bg-top bg-fixed" style={{ backgroundImage: `url(${skylineImage})` }}>
-            <div className="flex flex-col lg:max-w-1xl grid:max-w-1xl gap-24 items-center p-8 lg:py-20 backdrop-grayscale bg-gradient-to-r from-nearGreen via-nearGreen/50 via-50% to-nearGreen">
+            <div className="flex flex-col gap-16 items-center p-8 lg:py-20 backdrop-grayscale bg-gradient-to-r from-nearGreen via-nearGreen/50 via-50% to-nearGreen">
 
         <div className="text-center">
             <span className="text-xs lg:text-sm  text-navy tracking-widest">
@@ -49,7 +49,7 @@ export default function TeamSection() {
             <h2 className="text-3xl lg:text-1xl text-salmon font-bold">Founders</h2>
           </div>
         
-        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-2 gap-24">
+        <div className="grid grid-cols-1  md:grid-cols-1 lg:grid-cols-2 gap-24">
           {teamMembers.map((member, index) => (
             <div key={index} className="bg-offWhite rounded-lg shadow-md p-4">
               <div className="h- mb-4 flex items-center justify-center">
